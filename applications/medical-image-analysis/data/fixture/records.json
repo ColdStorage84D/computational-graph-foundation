@@ -1,0 +1,47 @@
+[
+  {
+    "case_id": "fixture-texture-1",
+    "display_name": "Texture-supported fixture",
+    "case_summary": "A generated image tile where the texture route has the strongest evidence.",
+    "review_goal": "Show how one visual branch can lead the graph toward human review without becoming an automatic medical answer.",
+    "image": "images/texture-review.svg",
+    "question": "Which evidence route should be reviewed first?",
+    "texture_contrast": 0.82,
+    "region_quality": 0.80,
+    "cell_density": 0.58,
+    "boundary_clarity": 0.62,
+    "source_quality": 0.86,
+    "collection_flag": "fixture",
+    "expected_decision": "review"
+  },
+  {
+    "case_id": "fixture-morphology-1",
+    "display_name": "Morphology-supported fixture",
+    "case_summary": "A generated image tile where boundary and shape evidence is stronger than texture evidence.",
+    "review_goal": "Show competing analysis routes and a verifier-selected review path.",
+    "image": "images/morphology-review.svg",
+    "question": "Which evidence route should be reviewed first?",
+    "texture_contrast": 0.51,
+    "region_quality": 0.60,
+    "cell_density": 0.78,
+    "boundary_clarity": 0.84,
+    "source_quality": 0.82,
+    "collection_flag": "fixture",
+    "expected_decision": "review"
+  },
+  {
+    "case_id": "fixture-low-confidence-1",
+    "display_name": "Low-confidence fixture",
+    "case_summary": "A generated image tile where all analysis routes are weak.",
+    "review_goal": "Show that weak evidence should abstain instead of creating authority.",
+    "image": "images/low-confidence-review.svg",
+    "question": "Should weak visual support create an automatic answer?",
+    "texture_contrast": 0.22,
+    "region_quality": 0.31,
+    "cell_density": 0.28,
+    "boundary_clarity": 0.26,
+    "source_quality": 0.34,
+    "collection_flag": "fixture",
+    "expected_decision": "abstain"
+  }
+]

@@ -1,0 +1,45 @@
+name: CGF checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate public-base structure and release hygiene
+        run: python scripts/check_public_base.py --publication-candidate
+      - name: Run reference and application tests
+        shell: bash
+        run: |
+          python -m unittest discover -s architecture/reference/python/tests -p "test_*.py"
+          python -m unittest discover -s applications/bots -p "test_*.py"
+          python -m unittest discover -s applications/maze-graph-memory-bot -p "test_*.py"
+          python -m unittest discover -s applications/medical-image-analysis -p "test_*.py"
+          python -m unittest discover -s applications/industrial-robot-arm -p "test_*.py"
+      - name: Run Labs eval tests
+        shell: bash
+        run: |
+          for suite in labs/evals/*; do
+            if [ -d "$suite" ]; then
+              python -m unittest discover -s "$suite" -p "test_*.py"
+            fi
+          done
+      - name: Check Python syntax
+        shell: bash
+        run: |
+          while IFS= read -r file; do
+            python -m py_compile "$file"
+          done < <(find . -type f -name '*.py' -not -path './.git/*' | sort)

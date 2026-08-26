@@ -1,0 +1,26 @@
+# Extension Registry
+
+This registry lists optional Substrate extension components. Each extension
+should solve a specific modeling failure mode and remain separate from the 9
+mandatory core primitives.
+
+| Extension | Problem solved | Research support | Labs result | Maturity |
+| --- | --- | --- | --- | --- |
+| [Topological rigidity](cards/topological-rigidity.md) | Preserves declared cycles, explicit phase degree, named twist or regime diagnostics, and reference-relative collapse evidence under smoothing or compression. | [study](../../research/extension-studies/topological-rigidity.md) | [contract-pass](../../labs/evals/topological-rigidity/results.md) | Research extension. |
+| [CellComplexView](cards/cell-complex-view.md) | Declares higher-order cells, boundaries, regions, surfaces, and aggregate support when edges alone hide validation structure. | [study](../../research/extension-studies/cell-complex-view.md) | [contract-pass](../../labs/evals/cell-complex-view/results.md) | Research extension. |
+| [Attractor Diagnostics](cards/attractor-diagnostics.md) | Declares recurrence, regime, cycle, expansion, or escape-warning evidence for dynamical subjects. | [study](../../research/extension-studies/attractor-diagnostics.md) | None yet. | Research extension. |
+| [Basis-mode representation](cards/basis-mode-representation.md) | Represents symmetry or eigenbasis subjects as mode graphs with coefficient fields, selection rules, and structured operators. | [study](../../research/extension-studies/basis-mode-representation.md) | [contract-pass](../../labs/evals/basis-mode-representation/results.md) | Research extension. |
+| [Exterior placement](cards/exterior-placement.md) | Declares exterior quantities, contact sets, and exchange conditions without hiding them as internal graph state. | [geometric discretization](../../research/extension-studies/geometric-discretization.md) | [contract-pass](../../labs/evals/exterior-placement/results.md) | Draft extension. |
+| [Weak form](cards/weak-form.md) | Expresses laws through tested aggregate residuals when pointwise rules are brittle or unavailable. | [geometric discretization](../../research/extension-studies/geometric-discretization.md) | [contract-pass](../../labs/evals/weak-form/results.md) | Draft extension. |
+| [Metric placement](cards/metric-placement.md) | Adds declared distance geometry, scale, projection, or coordinate validity to graph support. | [hyperbolic metric placement](../../research/extension-studies/hyperbolic-metric-placement.md) | [contract-pass](../../labs/evals/hyperbolic-placement/results.md) | Draft extension. |
+| [Stochastic transition](cards/stochastic-transition.md) | Represents uncertain state change through declared state spaces, transition kernels, and uncertainty checks. | [study](../../research/extension-studies/stochastic-transition.md) | [contract-pass](../../labs/evals/stochastic-transition/results.md) | Draft extension. |
+| [Information geometry](cards/information-geometry.md) | Treats probability or belief fields as distributions with divergence, entropy, and metric structure. | [study](../../research/extension-studies/information-geometry.md) | [contract-pass](../../labs/evals/information-geometry/results.md) | Research extension. |
+| [Gauge transport](cards/gauge-transport.md) | Keeps field comparison meaningful across local frames, gauges, connections, and transport paths. | [study](../../research/extension-studies/gauge-transport.md) | [contract-pass](../../labs/evals/gauge-transport/results.md) | Research extension. |
+| [Sheaf consistency](cards/sheaf-consistency.md) | Checks whether local assignments, restrictions, and gluing candidates agree across overlaps. | [study](../../research/extension-studies/sheaf-consistency.md) | [contract-pass](../../labs/evals/sheaf-consistency/results.md) | Research extension. |
+| [Port-Hamiltonian flow](cards/port-hamiltonian-flow.md) | Models storage, effort, flow, supply, dissipation, and control through structured ports. | [study](../../research/extension-studies/port-hamiltonian-flow.md) | [contract-pass](../../labs/evals/port-hamiltonian-flow/results.md) | Research extension. |
+| [Causal intervention](cards/causal-intervention.md) | Separates observation, intervention, counterfactual status, and causal claim scope. | [study](../../research/extension-studies/causal-intervention.md) | [contract-pass](../../labs/evals/causal-intervention/results.md) | Draft extension. |
+| [Renormalization / coarse-graining](cards/renormalization-coarse-graining.md) | Relates fine and coarse substrate descriptions while tracking preserved action, readout, and residual structure. | [study](../../research/extension-studies/renormalization-coarse-graining.md) | [contract-pass](../../labs/evals/renormalization-coarse-graining/results.md) | Research extension. |
+| [Differentiable backend](cards/differentiable-backend.md) | Declares which fields, actions, residuals, parameters, and readouts support automatic differentiation. | [operator learning study](../../research/application-class-studies.md) | [contract-pass](../../labs/evals/operator-learning/results.md) | Draft extension. |
+
+Extensions can be promoted, renamed, or split as examples and code reveal better
+boundaries.

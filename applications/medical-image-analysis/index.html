@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CGF Medical Image Analysis Demo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div>
+          <p class="eyebrow">CGF medical image analysis fixture</p>
+          <h1>Medical image review without one opaque answer</h1>
+          <p>A generated image case is split into analysis routes. CGF compares the routes, decides whether evidence is strong enough for review, and keeps the rejected alternatives visible.</p>
+        </div>
+        <div class="badges">
+          <span>no medical claim</span>
+          <span>no benchmark claim</span>
+          <span>local fixture data</span>
+        </div>
+      </header>
+
+      <section class="explain">
+        <div>
+          <strong>1. Fixture evidence</strong>
+          <span>The image is generated test data, not patient data.</span>
+        </div>
+        <div>
+          <strong>2. Graph analysis</strong>
+          <span>Texture, morphology, and context routes produce competing proposals.</span>
+        </div>
+        <div>
+          <strong>3. Review decision</strong>
+          <span>The verifier can route to review, abstain, or preserve alternatives.</span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel image-panel">
+          <label for="case-select">Case</label>
+          <select id="case-select"></select>
+          <div class="image-stage">
+            <img id="case-image" alt="" />
+            <div id="region-overlay" aria-hidden="true"></div>
+          </div>
+          <h2 id="case-title"></h2>
+          <p id="case-summary" class="muted"></p>
+          <h2>Question</h2>
+          <p id="case-question"></p>
+          <p id="review-goal" class="callout"></p>
+        </aside>
+
+        <section class="panel">
+          <p class="eyebrow">Graph decision</p>
+          <h2 id="decision"></h2>
+          <p id="decision-meaning" class="decision-meaning"></p>
+          <p id="reason" class="muted"></p>
+
+          <h3>Graph path</h3>
+          <ol id="flow" class="flow"></ol>
+
+          <div class="grid">
+            <div>
+              <h3>Lenses</h3>
+              <ul id="lenses" class="stack"></ul>
+            </div>
+            <div>
+              <h3>Proposals</h3>
+              <ul id="proposals" class="stack"></ul>
+            </div>
+          </div>
+
+          <h3>Rejected alternatives</h3>
+          <ul id="rejected" class="rejected-list"></ul>
+        </section>
+
+        <section class="panel trace">
+          <details open>
+            <summary>Trace</summary>
+            <pre id="trace"></pre>
+          </details>
+        </section>
+      </section>
+    </main>
+    <script src="demo-data.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>

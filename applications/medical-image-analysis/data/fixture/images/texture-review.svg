@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="CGF fixture texture review image">
+  <rect width="320" height="220" fill="#101815"/>
+  <rect x="18" y="18" width="284" height="184" rx="8" fill="#1f2d28" stroke="#45e6c2" stroke-width="2"/>
+  <g opacity="0.88">
+    <circle cx="70" cy="72" r="18" fill="#7edc73"/>
+    <circle cx="116" cy="58" r="11" fill="#d6c874"/>
+    <circle cx="156" cy="88" r="22" fill="#78a8d8"/>
+    <circle cx="214" cy="66" r="14" fill="#d88f78"/>
+    <circle cx="242" cy="116" r="20" fill="#7edc73"/>
+    <circle cx="94" cy="140" r="24" fill="#d6c874"/>
+    <circle cx="166" cy="150" r="13" fill="#78a8d8"/>
+    <circle cx="210" cy="158" r="9" fill="#d88f78"/>
+  </g>
+  <path d="M38 178 C80 156 114 194 151 170 S232 154 279 178" fill="none" stroke="#45e6c2" stroke-width="4"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="CGF fixture morphology review image">
+  <rect width="320" height="220" fill="#111716"/>
+  <rect x="20" y="20" width="280" height="180" rx="8" fill="#202922" stroke="#96e188" stroke-width="2"/>
+  <g fill="none" stroke-width="5">
+    <path d="M55 152 C78 86 127 78 151 124 C176 170 224 160 259 82" stroke="#96e188"/>
+    <path d="M52 72 C92 118 127 62 169 90 C201 111 218 142 268 129" stroke="#ffd166"/>
+    <path d="M70 174 C116 148 140 178 176 151 C202 132 226 137 252 165" stroke="#7aa2ff"/>
+  </g>
+  <circle cx="151" cy="124" r="9" fill="#f7f2dc"/>
+  <circle cx="169" cy="90" r="9" fill="#f7f2dc"/>
+  <circle cx="176" cy="151" r="9" fill="#f7f2dc"/>
+</svg>

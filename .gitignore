@@ -1,0 +1,33 @@
+# CGF local generated artifacts
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Native crash dumps
+*.stackdump
+
+# Local-only data, runs, checkpoints, and downloaded benchmark material
+.local/
+runs/
+datasets/
+checkpoints/
+*.pt
+*.pkl
+*.tar
+*.zip
+*.sqlite
+*.db
+
+# Webots local project/runtime artifacts
+*.wbproj
+.*.jpg
+.*.png
+
+# App-local generated status and memory snapshots
+applications/**/memory/*.json
+applications/**/memory/*.jsonl
+!applications/**/memory/.gitignore

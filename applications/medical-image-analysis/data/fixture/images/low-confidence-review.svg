@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="CGF fixture low confidence review image">
+  <rect width="320" height="220" fill="#121615"/>
+  <rect x="22" y="22" width="276" height="176" rx="8" fill="#1a211f" stroke="#6b7773" stroke-width="2"/>
+  <g opacity="0.34">
+    <rect x="48" y="54" width="70" height="90" fill="#cfc7a0"/>
+    <rect x="132" y="46" width="92" height="116" fill="#83a7c8"/>
+    <rect x="220" y="74" width="44" height="72" fill="#90c781"/>
+  </g>
+  <path d="M42 178 L278 178" stroke="#6b7773" stroke-width="5" stroke-dasharray="8 10"/>
+</svg>
