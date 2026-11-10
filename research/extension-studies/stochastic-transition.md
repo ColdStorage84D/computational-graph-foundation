@@ -87,3 +87,9 @@ prediction, sampling, and observed results very clearly.
 ## CGF Eval Result
 
 See [../../labs/evals/stochastic-transition/results.md](../../labs/evals/stochastic-transition/results.md).
+
+## References
+
+Public source for finite-state transition kernels.
+
+- [Markov Chains](https://doi.org/10.1017/CBO9780511810633), Norris (1997). Transition matrices, composition of kernels, and how a distribution is pushed forward.

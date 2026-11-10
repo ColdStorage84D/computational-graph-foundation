@@ -1,8 +1,8 @@
 # Release Manifest
 
-Snapshot: CGF v0.1.0 public base
+Snapshot: CGF v0.2.0
 
-Prepared: 2026-08-26
+Prepared: 2026-11-10
 
 ## Included Surface
 
@@ -25,7 +25,8 @@ This snapshot includes the docs-led CGF public base:
   control demonstration;
 - Research maps, extension studies, references, connection map, and claim
   boundaries;
-- Labs evals and result records for the current tiny fixtures.
+- Labs evals with result records: 19 isolated, 1 integration, and 6
+  value-over-baseline, plus a memory ablation for the bot example.
 
 ## Verification Summary
 
@@ -34,24 +35,29 @@ The public-base readiness pass completed with:
 | Check | Result |
 | --- | --- |
 | Architecture reference tests | Passed: 11 tests. |
-| Graph Memory Bot application tests | Passed: 14 tests. |
+| Graph Memory Bot application tests | Passed: 20 tests. |
 | Maze Graph Memory Bot Webots app tests | Passed: 34 tests. |
 | Medical image analysis application tests | Passed: 14 tests. |
 | Industrial robot arm application tests | Passed: 19 tests. |
-| Labs eval tests | Passed: 164 tests across 25 current eval folders. |
-| Total Python tests | Passed: 256 tests. |
+| Labs eval tests | Passed: 245 tests across 26 current eval folders. |
+| Total Python tests | Passed: 343 tests. |
 | Self-contained wording scan | Passed: no stale history wording found. |
 | Substrate boundary scan | Passed: no Architecture operation terms found in Substrate. |
 | Package / SDK scaffold scan | Passed: no top-level package or lock files found in CGF. |
-| Local Markdown link check | Passed: 1421 local links resolve. |
-| Python syntax check | Passed: 71 Python files compile. |
-| Documentation consistency | Passed: 25 eval folders are indexed and linked from the research connection map; result statuses and claim boundaries are present; Topological Rigidity has an independent derivative-diagnostic contract; headings, code fences, and Markdown tables are structurally consistent. |
+| Local Markdown link check | Passed: 1509 local links resolve. |
+| Python syntax check | Passed: 93 Python files compile. |
+| Documentation consistency | Passed: 26 eval folders are indexed and linked from the research connection map; every result record declares a status, an eval layer, and a claim boundary; every value-over-baseline record has a runnable comparison, names its baseline, and says where the concept does not help; Topological Rigidity has an independent derivative-diagnostic contract; headings, code fences, and Markdown tables are structurally consistent. |
+| Release count check | Passed: the test, eval folder, link, and Python file counts in this manifest and in the release notes equal the counts in the tree. |
+| Reference check | Passed: every extension study and every Architecture page named after outside work has a References section with at least one external source. |
 | Generated artifact check | Passed for the candidate tree: caches and local runtime traces are ignored, and no generated artifact is tracked. Publication history must be clean or squashed before hosting. |
 
 ## Supported Result Claims
 
-`contract-pass` result claims are limited to their tiny CGF-local fixtures and
-stated contracts. They do not prove broad domain performance.
+Every result record names its eval layer. An isolated or integration result
+shows that a concept is implemented as declared on small fixtures. A
+value-over-baseline result also compares the concept with a simpler baseline
+on seeded synthetic data and records where it does not help. No result is
+measured on real data.
 
 Use [PUBLIC_BASE_CHECKLIST.md](PUBLIC_BASE_CHECKLIST.md) and
 [research/connection-map.md](research/connection-map.md) for the current list
@@ -67,9 +73,11 @@ These areas remain intentionally deferred:
   exists;
 - higher-dimensional topology remains research-only until narrowed into a
   card, example, or eval;
-- offline replay / dream cycles, cognitive map memory, and engram / spatial
-  memory remain Architecture patterns until direct eval fixtures exist;
+- offline replay cycles, cognitive map memory, and cued recall memory remain
+  Architecture patterns until direct eval fixtures exist;
 - framework cards without direct evals must keep their claim boundary visible;
+- no eval is recipe-grounded yet, and several topics still lack a checked
+  public reference, as listed in [research/references.md](research/references.md);
 - applications remain examples unless separate domain validation is added.
 
 ## Release Boundary

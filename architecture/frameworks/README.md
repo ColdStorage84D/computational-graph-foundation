@@ -64,7 +64,7 @@ Then read the owning Architecture docs:
 - [cards/typed-multimodal-graph-framework.md](cards/typed-multimodal-graph-framework.md)
 - [cards/feature-view-framework.md](cards/feature-view-framework.md)
 - [cards/granular-analysis-framework.md](cards/granular-analysis-framework.md)
-- [cards/cortical-column-world-model-framework.md](cards/cortical-column-world-model-framework.md)
+- [cards/local-voting-world-model-framework.md](cards/local-voting-world-model-framework.md)
 - [cards/provisional-graph-growth-framework.md](cards/provisional-graph-growth-framework.md)
 - [cards/proposer-verifier-framework.md](cards/proposer-verifier-framework.md)
 - [cards/processor-routing-framework.md](cards/processor-routing-framework.md)

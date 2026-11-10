@@ -24,8 +24,8 @@ CGF-native material before becoming public docs.
 - Execution graph, graph brain/spine, subgraph capsules, and graph runtime
   memory as Architecture research threads for systems that act.
 - Anchor / Lens / Promise, Visual Media Encoding, Hierarchical Execution
-  Cycles, Offline Replay / Dream Cycles, Belief State, Bayesian Filtering,
-  Cognitive Map Memory, Engram / Spatial Memory, and Subgraph Role Registry as
+  Cycles, Offline Replay Cycles, Belief State, Bayesian Filtering,
+  Cognitive Map Memory, Cued Recall Memory, and Subgraph Role Registry as
   Architecture research threads for operating around declared subjects.
 - Provisional Graph Growth as an Architecture research thread for bounded
   graph adaptation, provisional capsules, candidate variants, promotion gates,

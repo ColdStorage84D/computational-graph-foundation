@@ -38,6 +38,10 @@ The app shows how the Architecture execution graph can support bots through:
 - [maze_value_memory.py](maze_value_memory.py): local value memory over a small
   maze graph. It is a teaching fixture only. It shows learned reachability and
   cost-to-go memory changing the next run.
+- [memory_ablation.py](memory_ablation.py): runs the maze value-memory
+  controller on seeded mazes with memory kept and with memory reset between
+  episodes. The numbers, including the case where kept memory fails, are in
+  [memory-ablation.md](memory-ablation.md).
 - [robot_topology_trace.py](robot_topology_trace.py): robot topology and trace
   contract. It shows sensors, goals, actions, actuators, limits, gates, evidence
   paths, and outcomes.
@@ -68,4 +72,10 @@ To print the generalized demo trace:
 
 ```powershell
 python applications/bots/graph_memory_bot.py
+```
+
+To print the memory ablation:
+
+```powershell
+python applications/bots/memory_ablation.py
 ```

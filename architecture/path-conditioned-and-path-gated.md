@@ -148,3 +148,14 @@ Before using either concept, answer:
 Use [path-conditioned-operators.md](path-conditioned-operators.md) when path
 context changes computation. Use [path-gated-operators.md](path-gated-operators.md)
 when path evidence controls influence or advancement.
+
+## Eval Support
+
+[labs/evals/path-gated-operators](../labs/evals/path-gated-operators/README.md)
+tests the hard gate and hop-discount conditioning, and compares both with a
+baseline that commits the highest score. On seeded synthetic cases where a
+recorded path is informative, the gate cuts wrong commits from 65% to 20% and
+abstains on 9%; conditioning takes them to 16%. Where a recorded path says
+nothing about correctness, the gate lowers precision. The
+[result record](../labs/evals/path-gated-operators/results.md) has the
+assumptions and the numbers.

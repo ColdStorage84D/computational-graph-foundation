@@ -40,9 +40,11 @@ class ValueMemory:
     values: dict[Cell, float] = field(default_factory=dict)
     open_edges: set[frozenset[Cell]] = field(default_factory=set)
     blocked_edges: set[frozenset[Cell]] = field(default_factory=set)
+    graph: dict[Cell, tuple[Cell, ...]] = field(default_factory=lambda: GRAPH)
+    goal: Cell = GOAL
 
     def value(self, cell: Cell) -> float:
-        return self.values.get(cell, manhattan(cell))
+        return self.values.get(cell, manhattan(cell, self.goal))
 
     def mark_open(self, a: Cell, b: Cell) -> None:
         self.open_edges.add(edge(a, b))
@@ -52,7 +54,9 @@ class ValueMemory:
         self.blocked_edges.add(edge(a, b))
 
     def reachable_neighbors(self, cell: Cell) -> tuple[Cell, ...]:
-        return tuple(neighbor for neighbor in GRAPH[cell] if edge(cell, neighbor) not in self.blocked_edges)
+        return tuple(
+            neighbor for neighbor in self.graph[cell] if edge(cell, neighbor) not in self.blocked_edges
+        )
 
     def backup(self, cell: Cell) -> float:
         successors = self.reachable_neighbors(cell)
@@ -70,17 +74,29 @@ class ValueMemory:
         return min(successors, key=lambda neighbor: (1.0 + self.value(neighbor), neighbor))
 
 
-def run_episode(memory: ValueMemory, *, max_steps: int = 12) -> dict[str, object]:
-    """Run one local greedy episode with online memory update."""
+def run_episode(
+    memory: ValueMemory,
+    *,
+    max_steps: int = 12,
+    start: Cell = (0, 0),
+    true_blocked: set[frozenset[Cell]] | None = None,
+) -> dict[str, object]:
+    """Run one local greedy episode with online memory update.
 
-    cell = (0, 0)
+    The world is the graph and goal held by `memory` plus `true_blocked`, the
+    edges that are really closed. The agent only learns an edge is closed by
+    trying it.
+    """
+
+    blocked_in_world = TRUE_BLOCKED if true_blocked is None else true_blocked
+    cell = start
     steps = 0
     path = [cell]
     blocked_discoveries = 0
-    while cell != GOAL and steps < max_steps:
+    while cell != memory.goal and steps < max_steps:
         steps += 1
         candidate = memory.choose_neighbor(cell)
-        if edge(cell, candidate) in TRUE_BLOCKED:
+        if edge(cell, candidate) in blocked_in_world:
             memory.mark_blocked(cell, candidate)
             memory.backup(cell)
             blocked_discoveries += 1
@@ -90,7 +106,7 @@ def run_episode(memory: ValueMemory, *, max_steps: int = 12) -> dict[str, object
         cell = candidate
         path.append(cell)
     return {
-        "reached": cell == GOAL,
+        "reached": cell == memory.goal,
         "steps": steps,
         "path": path,
         "blocked_discoveries": blocked_discoveries,

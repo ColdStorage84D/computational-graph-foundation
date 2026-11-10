@@ -1,4 +1,4 @@
-"""CGF operator learning eval."""
+"""CGF surrogate promotion eval."""
 
 from __future__ import annotations
 

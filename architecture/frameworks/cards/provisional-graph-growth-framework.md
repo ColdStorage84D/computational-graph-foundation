@@ -30,7 +30,7 @@ state remains protected by explicit promotion and rollback rules.
 - [Execution graph](../../execution-graph.md)
 - [Subgraph capsules](../../subgraph-capsules.md)
 - [Graph runtime memory](../../graph-runtime-memory.md)
-- [Offline replay / dream cycles](../../offline-replay-dream-cycles.md)
+- [Offline replay cycles](../../offline-replay-cycles.md)
 - [Proposer-verifier](proposer-verifier-framework.md)
 - [Trace contract](../../contracts/trace-contract.md)
 

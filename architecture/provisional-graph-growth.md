@@ -100,7 +100,7 @@ quarantine, or is retired.
 | Execution graph | Provides the operating surface where observations, proposals, gates, and commits occur. |
 | Subgraph capsules | Provisional structures are a special kind of capsule with stricter authority limits. |
 | Graph runtime memory | Stores activation, support, risk, outcomes, quarantine, and rollback evidence. |
-| Offline replay / dream cycles | Can replay real traces or generate hypotheses, but promotion still requires resolved evidence. |
+| Offline replay cycles | Can replay real traces or generate hypotheses, but promotion still requires resolved evidence. |
 | Path-conditioned / path-gated operators | May influence candidate scoring or advancement, but cannot replace the promotion gate. |
 
 ## When To Use

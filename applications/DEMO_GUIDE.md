@@ -32,9 +32,8 @@ signal packet
 -> traceable signal decision
 ```
 
-Claim boundary: synthetic contract demo only. It does not claim financial
-advice, market prediction, anomaly-detection performance, reliability
-improvement, or domain generalization.
+Claim boundary: synthetic contract demo. The limits are in the
+[result record](../labs/evals/signal-review/results.md).
 
 ## 2. Medical Image Analysis
 
@@ -69,16 +68,17 @@ input / sensor state
 
 - Graph Memory Bot: [bots/README.md](bots/README.md)
 - Generalized runner: [bots/graph_memory_bot.py](bots/graph_memory_bot.py)
+- Memory ablation: [bots/memory-ablation.md](bots/memory-ablation.md)
 - Webots maze app: [maze-graph-memory-bot/README.md](maze-graph-memory-bot/README.md)
 - Bot route growth walkthrough: [bots/provisional-growth-example.md](bots/provisional-growth-example.md)
-- Owning Architecture: [../architecture/cortical-column-world-model.md](../architecture/cortical-column-world-model.md)
+- Owning Architecture: [../architecture/local-voting-world-model.md](../architecture/local-voting-world-model.md)
 - Predictive Action Graph: [../architecture/predictive-action-graph.md](../architecture/predictive-action-graph.md)
 - Graph runtime memory: [../architecture/graph-runtime-memory.md](../architecture/graph-runtime-memory.md)
 - Provisional Graph Growth: [../architecture/provisional-graph-growth.md](../architecture/provisional-graph-growth.md)
 
-Claim boundary: graph action and memory skeleton only. It does not claim
-autonomous bot performance, benchmark success, guaranteed maze solving,
-robotics performance, AGI, or biological cortex.
+Claim boundary: graph action and memory skeleton. The limits are in
+[bots/README.md](bots/README.md), and the measured effect of memory is in
+[bots/memory-ablation.md](bots/memory-ablation.md).
 
 Use the route-growth walkthrough when the story is about a bot learning that an
 unknown pattern needs a new route. It is backed only by the tiny CGF-local
@@ -101,9 +101,8 @@ six-axis topology
 - Webots world: [industrial-robot-arm/main/worlds/inverse_kinematics.wbt](industrial-robot-arm/main/worlds/inverse_kinematics.wbt)
 - Claim boundary: [industrial-robot-arm/claim-boundary.md](industrial-robot-arm/claim-boundary.md)
 
-Claim boundary: Webots graph-control demo only. It does not claim real robot
-safety, manufacturing readiness, simulator benchmark performance, vendor
-accuracy, or autonomous industrial control.
+This is a Webots graph-control demo. Read its claim boundary, linked above,
+before reusing any of it near a real robot.
 
 The Webots IK adapter uses temporal coherence to reduce jerky motion: it
 reuses a cached IK command while the target is stable, replans when the target

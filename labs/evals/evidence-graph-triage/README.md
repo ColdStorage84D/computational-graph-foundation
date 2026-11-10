@@ -39,21 +39,36 @@ finding:unsupported         no records                         -> needs_more_evi
 outcome on the corroborated item is enough to swap them. That swap, with every
 status unchanged, is what the eval observes.
 
+## Comparison
+
+`comparison.py` generates synthetic findings, each recorded by zero to three
+sources, and compares three ways of deciding what to commit:
+
+- the highest scores, at the same volume the corroboration arm commits;
+- any finding with two or more records;
+- `decide_status` from this eval, which needs a declared pair of distinct
+  source categories.
+
+A second regime makes two of the sources copies of each other. The numbers
+are in [results.md](results.md).
+
 ## Run
 
 ```powershell
 python -m unittest discover -s labs/evals/evidence-graph-triage -p "test_*.py"
 ```
 
-To print the eval result:
+To print the contract result and the comparison:
 
 ```powershell
 python labs/evals/evidence-graph-triage/eval.py
+python labs/evals/evidence-graph-triage/comparison.py
 ```
 
 ## Claim Boundary
 
-Passing this eval supports only `contract-pass` for the tiny CGF-local fixture:
+Passing the contract tests supports `contract-pass` for the four-candidate
+fixture:
 
 - status is a function of evidence corroboration alone;
 - the highest scoring candidate is still deferred when one source supports it;
@@ -64,6 +79,8 @@ Passing this eval supports only `contract-pass` for the tiny CGF-local fixture:
 - inconclusive and expired outcomes raise uncertainty and never register as
   success.
 
-It does not support detection accuracy, triage-quality improvement, analyst
-workload reduction, calibrated probability or risk scoring, or any security,
-audit, or moderation claim.
+The comparison adds a measured effect on synthetic findings under the
+generator's stated assumptions. Neither part supports detection accuracy,
+triage-quality improvement on real queues, analyst workload reduction,
+calibrated probability or risk scoring, or any security, audit, or moderation
+claim.

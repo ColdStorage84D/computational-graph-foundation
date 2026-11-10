@@ -46,3 +46,10 @@ durable value by itself.
 
 CGF has a tiny local eval for a one-dimensional linear-Gaussian filter. It does
 not claim a general filtering library.
+
+## References
+
+Public sources for the filter the eval implements.
+
+- [A New Approach to Linear Filtering and Prediction Problems](https://doi.org/10.1115/1.3662552), Kalman (1960). The predict and update recursion for linear-Gaussian systems.
+- [Bayesian Filtering and Smoothing](https://doi.org/10.1017/CBO9781139344203), Sarkka (2013). A modern treatment of Bayesian filtering, including innovation and consistency checks.

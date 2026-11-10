@@ -26,18 +26,18 @@ When reading or writing Architecture material, look for these signals:
 - Trace and replay can reconstruct why a decision happened.
 - Graph runtime memory updates are coupled to observed outcomes.
 - Hierarchical cycles keep child responses bounded by budget and authority.
-- Offline replay/dream cycles separate real outcome-backed replay from
+- Offline replay cycles separate real outcome-backed replay from
   counterfactual hypotheses.
 - Provisional Graph Growth separates candidate graph adaptation from durable
   graph mutation.
 - Belief state and Bayesian filtering preserve uncertainty and innovation as
   evidence, not durable truth.
-- Cognitive map and engram memory organize recall without bypassing outcomes.
+- Cognitive map and cued recall memory organize recall without bypassing outcomes.
 - Granular Analysis is visible when one input fans out through multiple lenses,
   encoders, proposal nodes, and outcome candidates.
 - Predictive Action Graph is visible when action selection compares candidate
   action sequences through predicted futures before committing one first action.
-- The Cortical-Column World Model is visible when local sensorimotor subgraphs
+- The Local-Voting World Model is visible when local sensorimotor subgraphs
   predict outcomes, report prediction error, and aggregate proposals before a
   gated commit.
 - The Multimodal Outcome Stack is visible when source evidence, typed records,
@@ -59,10 +59,10 @@ README.md -> responsibility-boundary.md -> execution-graph.md
 -> anchor-lens-promise.md -> visual-media-encoding.md
 -> graph-runtime-memory.md -> belief-state.md
 -> path-state-graph.md -> hierarchical-execution-cycles.md
--> offline-replay-dream-cycles.md -> provisional-graph-growth.md
+-> offline-replay-cycles.md -> provisional-graph-growth.md
 -> granular-analysis.md
 -> predictive-action-graph.md
--> cortical-column-world-model.md
+-> local-voting-world-model.md
 -> multimodal-outcome-stack.md
 -> path-conditioned-and-path-gated.md
 -> operating-cycle.md
@@ -112,13 +112,13 @@ status.md -> responsibility-boundary.md -> execution-graph.md -> runtime-spine.m
 | [bayesian-filtering-state-estimation.md](bayesian-filtering-state-estimation.md) | Belief prediction and measurement correction. | Prior, process model, measurement, posterior, innovation, and uncertainty. |
 | [path-state-graph.md](path-state-graph.md) | Runtime representation of active, candidate, committed, and historical paths. | How facts, relations, workflows, decisions, and subgraph routes can be represented as paths. |
 | [hierarchical-execution-cycles.md](hierarchical-execution-cycles.md) | Parent and child operating cycles. | Child budgets, response statuses, deferrals, and parent authority. |
-| [offline-replay-dream-cycles.md](offline-replay-dream-cycles.md) | Offline resolve, replay, dream, and promotion review cycles. | Real outcome-backed replay versus counterfactual hypotheses. |
+| [offline-replay-cycles.md](offline-replay-cycles.md) | Offline resolve, replay, simulation, and promotion review cycles. | Real outcome-backed replay versus counterfactual hypotheses. |
 | [provisional-graph-growth.md](provisional-graph-growth.md) | Bounded graph adaptation. | Provisional capsules, candidate variants, shadow scoring, stability guards, promotion gates, and rollback. |
 | [cognitive-map-memory.md](cognitive-map-memory.md) | Relational recall structure. | Physical, conceptual, or latent task maps used as proposal evidence. |
-| [engram-spatial-memory.md](engram-spatial-memory.md) | Sparse episode recall traces. | Where, what, action, outcome bindings and partial cue reactivation. |
+| [cued-recall-memory.md](cued-recall-memory.md) | Sparse episode recall traces. | Where, what, action, outcome bindings and partial cue reactivation. |
 | [granular-analysis.md](granular-analysis.md) | Multi-lens, multi-proposer, outcome-oriented graph analysis. | Many lenses, many proposers, one traceable outcome. |
 | [predictive-action-graph.md](predictive-action-graph.md) | Action selection through traceable predicted futures. | Current evidence, goal evidence, candidate sequences, prediction, gate, selected first action, trace, and memory. |
-| [cortical-column-world-model.md](cortical-column-world-model.md) | Local sensorimotor predictive subgraphs composed as an Architecture foundation. | Columns as evidence/prediction/memory surfaces, lateral proposal aggregation, prediction error, outcome-coupled memory, and safety gates. |
+| [local-voting-world-model.md](local-voting-world-model.md) | Local sensorimotor predictive subgraphs composed as an Architecture foundation. | Columns as evidence/prediction/memory surfaces, lateral proposal aggregation, prediction error, outcome-coupled memory, and safety gates. |
 | [multimodal-outcome-stack.md](multimodal-outcome-stack.md) | Reusable evidence-to-outcome stack for multimodal and multi-view cases. | Evidence refs, typed graph records, feature views, processor routes, proposals, review, and trace. |
 | [path-conditioned-and-path-gated.md](path-conditioned-and-path-gated.md) | Central path-aware Architecture primer. | Difference between conditioning, gating, and combined use. |
 | [operating-cycle.md](operating-cycle.md) | Repeatable decision cycle. | Encode, propose, verify, commit, execute, observe, resolve, consolidate. |
@@ -132,7 +132,7 @@ and medical image analysis compose them; they do not own them.
 | --- | --- | --- |
 | [frameworks/README.md](frameworks/README.md) | Framework catalog entry. | The rule that framework means reusable pattern, not mandatory SDK. |
 | [frameworks/registry.md](frameworks/registry.md) | Current framework registry. | Which pattern solves which failure mode and which applications can use it. |
-| [frameworks/cards/README.md](frameworks/cards/README.md) | Framework card index. | Compact cards for bot graph, evidence record, multimodal graph, feature view, Granular Analysis, Cortical-Column World Model, proposer/verifier, routing, review, cache, security, and sensor ingestion. |
+| [frameworks/cards/README.md](frameworks/cards/README.md) | Framework card index. | Compact cards for bot graph, evidence record, multimodal graph, feature view, Granular Analysis, Local-Voting World Model, proposer/verifier, routing, review, cache, security, and sensor ingestion. |
 
 ## Operating Patterns
 

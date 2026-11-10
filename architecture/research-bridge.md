@@ -23,11 +23,11 @@ operates around declared subjects.
 | Anchor / Lens / Promise | Preserve stable source identity, replayable lens application identity, and pending or fulfilled view status. |
 | Visual media encoding | Preserve image/video source refs, frames, regions, tracks, events, and graph-view evidence. |
 | Hierarchical execution cycles | Coordinate parent/child cycles, budgets, response statuses, deferrals, and authority boundaries. |
-| Offline replay / dream cycles | Separate late outcome resolution and real-trace replay from counterfactual hypothesis generation. |
+| Offline replay cycles | Separate late outcome resolution and real-trace replay from counterfactual hypothesis generation. |
 | Belief state | Carry confidence, uncertainty, calibration, evidence weight, and distribution refs through operating records. |
 | Bayesian filtering / state estimation | Use process prediction and measurement update as working belief evidence without durable-truth promotion. |
 | Cognitive map memory | Organize relational recall over physical, conceptual, or latent task spaces. |
-| Engram / spatial memory | Preserve sparse reactivatable episode traces as recall evidence. |
+| Cued recall memory | Preserve sparse reactivatable episode traces as recall evidence. |
 | Contracts | Define what each operational step must preserve, expose, or reject. |
 | Proposal / verification / commit | Separate candidate generation, checking, and accepted state change. |
 | Granular Analysis | Preserve many lens branches, many proposal nodes, and one traceable outcome. |
@@ -67,8 +67,8 @@ When research material contains both Substrate and Architecture content:
 - move execution graph, graph brain/spine, subgraph capsule, proposal,
   verification, commit, granular analysis, event log, trace, replay, graph
   runtime memory, anchor/lens/promise, visual media encoding, hierarchical
-  cycles, offline replay/dream cycles, belief state, Bayesian filtering,
-  cognitive map, engram recall, lens, adapter, framework-card,
+  cycles, offline replay cycles, belief state, Bayesian filtering,
+  cognitive map, cued recall, lens, adapter, framework-card,
   path-conditioned, path-gated, policy, and operating-contract content into
   Architecture;
 - keep runnable evals, prototypes, and unfinished experiments in Labs until

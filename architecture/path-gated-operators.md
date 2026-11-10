@@ -142,6 +142,7 @@ commit decision
 
 ## Maturity
 
-Core Architecture pattern.
+Core Architecture pattern, with a value-over-baseline eval of the hard gate:
+[labs/evals/path-gated-operators/results.md](../labs/evals/path-gated-operators/results.md).
 
 This page does not define a mandatory operator API.

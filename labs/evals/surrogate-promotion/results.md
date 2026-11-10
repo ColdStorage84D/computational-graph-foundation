@@ -1,11 +1,13 @@
-# Operator Learning Results
+# Surrogate Promotion Results
 
 Status: `contract-pass`
+
+Eval layer: `isolated`
 
 Reviewed command:
 
 ```powershell
-python -m unittest discover -s labs/evals/operator-learning -p "test_*.py"
+python -m unittest discover -s labs/evals/surrogate-promotion -p "test_*.py"
 ```
 
 Reviewed result:

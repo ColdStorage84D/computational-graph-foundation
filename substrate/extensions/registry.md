@@ -20,7 +20,7 @@ mandatory core primitives.
 | [Port-Hamiltonian flow](cards/port-hamiltonian-flow.md) | Models storage, effort, flow, supply, dissipation, and control through structured ports. | [study](../../research/extension-studies/port-hamiltonian-flow.md) | [contract-pass](../../labs/evals/port-hamiltonian-flow/results.md) | Research extension. |
 | [Causal intervention](cards/causal-intervention.md) | Separates observation, intervention, counterfactual status, and causal claim scope. | [study](../../research/extension-studies/causal-intervention.md) | [contract-pass](../../labs/evals/causal-intervention/results.md) | Draft extension. |
 | [Renormalization / coarse-graining](cards/renormalization-coarse-graining.md) | Relates fine and coarse substrate descriptions while tracking preserved action, readout, and residual structure. | [study](../../research/extension-studies/renormalization-coarse-graining.md) | [contract-pass](../../labs/evals/renormalization-coarse-graining/results.md) | Research extension. |
-| [Differentiable backend](cards/differentiable-backend.md) | Declares which fields, actions, residuals, parameters, and readouts support automatic differentiation. | [operator learning study](../../research/application-class-studies.md) | [contract-pass](../../labs/evals/operator-learning/results.md) | Draft extension. |
+| [Differentiable backend](cards/differentiable-backend.md) | Declares which fields, actions, residuals, parameters, and readouts support automatic differentiation. | [operator learning study](../../research/application-class-studies.md) | [contract-pass](../../labs/evals/surrogate-promotion/results.md) | Draft extension. |
 
 Extensions can be promoted, renamed, or split as examples and code reveal better
 boundaries.

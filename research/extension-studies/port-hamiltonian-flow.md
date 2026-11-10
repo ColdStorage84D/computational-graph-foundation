@@ -90,3 +90,9 @@ port-compatibility records need concrete examples.
 ## CGF Eval Result
 
 See [../../labs/evals/port-hamiltonian-flow/results.md](../../labs/evals/port-hamiltonian-flow/results.md).
+
+## References
+
+Public source for port-Hamiltonian systems. The eval implements the linear input-state-output form with dissipation described there.
+
+- [Port-Hamiltonian Systems Theory: An Introductory Overview](https://doi.org/10.1561/2600000002), van der Schaft and Jeltsema (2014). Interconnection, dissipation, and port structure, the power balance, and why interconnections of port-Hamiltonian systems are again port-Hamiltonian.

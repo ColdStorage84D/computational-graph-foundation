@@ -15,6 +15,20 @@ MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)\n]+)\)")
 STATUS = re.compile(r"^Status:\s+`[^`]+`\s*$", re.MULTILINE)
 REVIEW_RECORD = re.compile(r"reviewed command|reviewed date|^command:", re.IGNORECASE | re.MULTILINE)
 CLAIM_BOUNDARY = re.compile(r"claim boundary", re.IGNORECASE)
+EVAL_LAYERS = ("isolated", "integration", "value-over-baseline", "recipe-grounded")
+EVAL_LAYER = re.compile(r"^Eval layer:\s+`([^`]+)`\s*$", re.MULTILINE)
+COMPARISON_LAYERS = {"value-over-baseline", "recipe-grounded"}
+TEST_FUNCTION = re.compile(r"^\s+def test_\w+\(", re.MULTILINE)
+REFERENCES_HEADING = re.compile(r"^## References[ \t]*$", re.MULTILINE)
+NEXT_HEADING = re.compile(r"^## ", re.MULTILINE)
+EXTERNAL_LINK = re.compile(r"\]\(https?://[^)\s]+\)")
+REFERENCED_PAGES = (
+    "architecture/local-voting-world-model.md",
+    "architecture/cued-recall-memory.md",
+    "architecture/offline-replay-cycles.md",
+    "architecture/cognitive-map-memory.md",
+    "architecture/bayesian-filtering-state-estimation.md",
+)
 ARCHITECTURE_ONLY = re.compile(
     r"\b(runtime spine|execution graph|graph brain(?:/spine)?|graph runtime memory|"
     r"proposal / verifier / commit)\b",
@@ -151,6 +165,7 @@ def check_eval_records(errors: list[str]) -> int:
                 errors.append(f"missing reviewed command or date: {result_path.relative_to(ROOT)}")
             if not CLAIM_BOUNDARY.search(result):
                 errors.append(f"missing claim boundary: {result_path.relative_to(ROOT)}")
+            check_eval_layer(suite, result, errors)
         if f"({suite.name}/README.md)" not in index:
             errors.append(f"eval is not indexed: {suite.name}")
         if f"(../labs/evals/{suite.name}/results.md)" not in connection_map:
@@ -158,9 +173,51 @@ def check_eval_records(errors: list[str]) -> int:
     return len(suites)
 
 
-def check_release_counts(errors: list[str]) -> None:
+def check_eval_layer(suite: Path, result: str, errors: list[str]) -> None:
+    """Every result declares its eval layer; a value claim must earn it."""
+
+    record = (suite / "results.md").relative_to(ROOT)
+    match = EVAL_LAYER.search(result)
+    layer = match.group(1) if match else None
+    if layer not in EVAL_LAYERS:
+        errors.append(
+            f"missing or unknown eval layer: {record} (expected one of {', '.join(EVAL_LAYERS)})"
+        )
+        return
+    if layer not in COMPARISON_LAYERS:
+        return
+    # A value claim needs a runnable comparison, a named baseline, and a
+    # statement of where the concept does not help.
+    for required in ("comparison.py", "test_comparison.py"):
+        if not (suite / required).exists():
+            errors.append(f"{layer} eval is missing {suite.relative_to(ROOT) / required}")
+    folded = result.casefold()
+    if "baseline" not in folded:
+        errors.append(f"{layer} result names no baseline: {record}")
+    if "## where it does not help" not in folded:
+        errors.append(f"{layer} result has no 'Where It Does Not Help' section: {record}")
+
+
+def check_release_counts(errors: list[str], local_links: int, tracked: list[Path]) -> None:
     notes = (ROOT / "RELEASE_NOTES.md").read_text(encoding="utf-8")
     manifest = (ROOT / "RELEASE_MANIFEST.md").read_text(encoding="utf-8")
+    link_match = re.search(r"Passed: (\d+) local links resolve", manifest)
+    if not link_match:
+        errors.append("RELEASE_MANIFEST.md does not state the local link count")
+    elif int(link_match.group(1)) != local_links:
+        errors.append(
+            f"RELEASE_MANIFEST.md claims {link_match.group(1)} local links; the tree has {local_links}"
+        )
+    python_files = sum(1 for path in tracked if path.suffix == ".py" and path.exists())
+    for name, text, pattern in (
+        ("RELEASE_NOTES.md", notes, r"All (\d+) Python files compile"),
+        ("RELEASE_MANIFEST.md", manifest, r"Passed: (\d+) Python files compile"),
+    ):
+        file_match = re.search(pattern, text)
+        if not file_match:
+            errors.append(f"{name} does not state the Python file count")
+        elif tracked and int(file_match.group(1)) != python_files:
+            errors.append(f"{name} claims {file_match.group(1)} Python files; the tree has {python_files}")
     note_match = re.search(
         r"(\d+) Python tests pass: (\d+) Architecture/application tests and (\d+) Labs tests",
         notes,
@@ -177,6 +234,55 @@ def check_release_counts(errors: list[str]) -> None:
         errors.append("RELEASE_NOTES.md test total does not equal its component counts")
     if (note_total, note_labs) != (manifest_total, manifest_labs):
         errors.append("release notes and manifest test counts disagree")
+    # The written totals must match the test functions actually in the tree.
+    actual_labs = count_tests(ROOT / "labs" / "evals")
+    actual_application = count_tests(ROOT / "applications") + count_tests(ROOT / "architecture")
+    if note_labs != actual_labs:
+        errors.append(f"release docs claim {note_labs} Labs tests; the tree has {actual_labs}")
+    if note_application != actual_application:
+        errors.append(
+            f"release docs claim {note_application} Architecture/application tests; "
+            f"the tree has {actual_application}"
+        )
+    folders = sum(1 for path in (ROOT / "labs" / "evals").iterdir() if path.is_dir())
+    for name, text in (("RELEASE_NOTES.md", notes), ("RELEASE_MANIFEST.md", manifest)):
+        match = re.search(r"across (\d+)(?: current)? eval folders", text)
+        if not match:
+            errors.append(f"{name} does not state the eval folder count")
+        elif int(match.group(1)) != folders:
+            errors.append(f"{name} claims {match.group(1)} eval folders; the tree has {folders}")
+
+
+def count_tests(directory: Path) -> int:
+    total = 0
+    for path in sorted(directory.rglob("test_*.py")):
+        if "__pycache__" in path.parts:
+            continue
+        total += len(TEST_FUNCTION.findall(path.read_text(encoding="utf-8")))
+    return total
+
+
+def check_references(errors: list[str]) -> None:
+    """Research studies and pages named after outside work must cite it."""
+
+    studies = sorted((ROOT / "research" / "extension-studies").glob("*.md"))
+    pages = [path for path in studies if path.name != "README.md"]
+    pages.extend(ROOT / relative for relative in REFERENCED_PAGES)
+    for path in pages:
+        if not path.exists():
+            errors.append(f"page that must carry references is missing: {path.relative_to(ROOT)}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        heading = REFERENCES_HEADING.search(text)
+        if not heading:
+            errors.append(f"missing '## References' section: {path.relative_to(ROOT)}")
+            continue
+        body = text[heading.end() :]
+        following = NEXT_HEADING.search(body)
+        if following:
+            body = body[: following.start()]
+        if not EXTERNAL_LINK.search(body):
+            errors.append(f"References section has no external link: {path.relative_to(ROOT)}")
 
 
 def check_boundaries_and_history_wording(errors: list[str]) -> None:
@@ -252,7 +358,8 @@ def main() -> int:
     git_root, tracked = git_context()
     local_links = check_markdown(errors)
     eval_count = check_eval_records(errors)
-    check_release_counts(errors)
+    check_release_counts(errors, local_links, tracked)
+    check_references(errors)
     check_boundaries_and_history_wording(errors)
     check_tracked_tree(tracked, errors)
     if args.publication_candidate:

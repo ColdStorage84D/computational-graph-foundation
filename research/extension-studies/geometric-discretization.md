@@ -187,3 +187,10 @@ then return a `DiscreteProblem` plus warnings.
 
 That future code should remain optional and section-local. It should not become
 a top-level SDK or a mandatory CGF package.
+
+## References
+
+Public sources for placing quantities on discrete structures and for weak formulations.
+
+- [Discrete Exterior Calculus](https://arxiv.org/abs/math/0508341), Desbrun, Hirani, Leok, and Marsden (2005). Placing quantities on nodes, edges, faces, and volumes so that conservation survives discretization.
+- [Finite element exterior calculus: from Hodge theory to numerical stability](https://arxiv.org/abs/0906.4325), Arnold, Falk, and Winther (2009). Weak formulations and the conditions under which their discretizations are stable.

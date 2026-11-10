@@ -61,3 +61,11 @@ depends on dynamical regime structure.
 ## Maturity
 
 Status: research-supported. No direct Labs eval yet.
+
+## References
+
+Public sources for the dynamical-systems concepts this study uses.
+
+- [Detecting strange attractors in turbulence](https://doi.org/10.1007/BFb0091924), Takens (1981). Reconstruction of an attractor from a time series by delay coordinates.
+- [Measuring the strangeness of strange attractors](https://doi.org/10.1016/0167-2789%2883%2990298-1), Grassberger and Procaccia (1983). Correlation dimension as a recurrence-based diagnostic.
+- [Determining Lyapunov exponents from a time series](https://doi.org/10.1016/0167-2789%2885%2990011-9), Wolf, Swift, Swinney, and Vastano (1985). Estimating expansion rates from sampled trajectories.

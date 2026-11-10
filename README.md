@@ -1,136 +1,139 @@
-﻿# Computational Graph Foundation (CGF)
+# Computational Graph Foundation (CGF)
 
-Computational Graph Foundation (CGF) is an open, MIT-licensed base for
-describing and building graph-shaped computational systems.
+CGF is an MIT-licensed set of patterns, written contracts, and small runnable
+examples for systems that compute over graphs and have to show how they reached
+a result.
 
-CGF is docs-led first, with optional code examples, reference implementations,
-and concept implementations expected as the contracts become clear. It is not
-an SDK requirement, package lock-in, or a rulebook. Developers may read the
-ideas, copy code, fork it, implement the patterns in their own style, or ignore
-the suggested structure.
+It is documentation first, with stdlib-only Python wherever a contract is clear
+enough to run. There is nothing to install. Read it, copy from it, or fork it.
 
-The public base is self-contained. It is ready when a developer can enter from
-this README, choose the right layer, inspect claim boundaries, run local checks,
-and build independently.
+## What You Get
 
-The public ladder is:
+Three results you can reproduce in a few minutes. Run them from the directory
+containing this README, with Python 3.11 and no dependencies.
 
-```text
-CGF -> Substrate -> Architecture -> Applications
-```
-
-## Quick Start
-
-CGF has no required Python package dependencies. The current public-base checks
-are verified with Python 3.11. Run commands from the directory containing this
-README:
+**A commit boundary the highest score cannot cross.** A proposal advances only
+when its cited evidence path resolves.
 
 ```powershell
+python labs/evals/path-gated-operators/comparison.py
+```
+
+On 4000 seeded cases, gating on a resolvable path cuts wrong commits from 65%
+to 20% and abstains on 9%. When paths carry no information about correctness
+the gate does not help.
+[Result record](labs/evals/path-gated-operators/results.md).
+
+**Status set by corroboration, never by score.** A finding is confirmed only
+when a declared pair of distinct sources supports it.
+
+```powershell
+python labs/evals/evidence-graph-triage/comparison.py
+```
+
+On 5000 seeded findings, at equal review volume, corroboration makes 144 wrong
+commits where score ranking makes 313. The advantage shrinks when two sources
+are copies of each other.
+[Result record](labs/evals/evidence-graph-triage/results.md).
+
+**Memory that changes the next run.** A controller keeps what it learned about
+a maze between episodes.
+
+```powershell
+python applications/bots/memory_ablation.py
+```
+
+On 300 seeded mazes, kept memory reaches the shortest path by the sixth
+episode, 10.2 steps against 26.7 with memory reset. When the maze changes
+between episodes, kept memory almost never reaches the goal.
+[Result record](applications/bots/memory-ablation.md).
+
+Each record states its assumptions, its baseline, and where the pattern does
+not help.
+
+## Run The Checks
+
+```powershell
+python scripts/check_public_base.py
 python -m unittest discover -s architecture/reference/python/tests -p "test_*.py"
 python -m unittest discover -s applications/bots -p "test_*.py"
 python applications/bots/graph_memory_bot.py
 ```
 
-The Webots applications are optional. Their checked-in worlds target Webots
-R2025a. The industrial robot arm can optionally use `ikpy` 3.0 or newer and
-otherwise uses its documented fallback path.
+The complete list is in [PUBLIC_BASE_CHECKLIST.md](PUBLIC_BASE_CHECKLIST.md).
 
-The Webots worlds reference version-pinned upstream R2025a PROTO and texture
-assets. Their first simulator load therefore requires network access unless
-those Webots assets are already cached locally.
-
-For the complete release verification commands, see
-[PUBLIC_BASE_CHECKLIST.md](PUBLIC_BASE_CHECKLIST.md). For repository layout,
-release hygiene, tagging, and publication steps, see
-[PUBLISHING.md](PUBLISHING.md).
-
-## What This Repo Is
-
-- A shared vocabulary for graph-shaped computation.
-- A clean Substrate specification for graph, fields, placement, action,
-  constraints, evolution, readout, and validation.
-- An Architecture layer for execution graphs, brain/spine coordination,
-  subgraph capsules, graph runtime memory, path-conditioned operation,
-  path-gated control, proposals, commits, trace, replay, and evaluation.
-- Granular Analysis as a pitch pillar: many lenses, many proposers, one
-  traceable outcome.
-- A Multimodal Outcome Stack for cases that need external evidence records,
-  typed graph records, feature views, processor routes, proposals, review, and
-  traceable outcomes.
-- Signal Review for signal, alert, anomaly, risk, and operational review
-  workflows where raw signals should not become direct authority.
-- A reusable Architecture framework catalog for concepts that can be applied
-  across many applications.
-- Section-local code examples and reference implementations where the owning
-  docs have a clear contract.
-- A place for independent applications, internal research notes, labs, and
-  archive material.
-
-## What This Repo Is Not
-
-- Not a mandatory SDK.
-- Not a promise that all code must live in one central package.
-- Not a graph database.
-- Not a GNN framework.
-- Not an agent framework.
-- Not a universal solver.
-- Not a claim that every domain is already solved.
-
-## Sections
+## How It Is Organized
 
 ```text
-substrate/      first technical layer: what is being computed
-architecture/   how CGF systems operate around substrate subjects
-applications/   independent domain uses
-research/       self-contained theory, references, and claim boundaries
-labs/           active experiments
+CGF -> Substrate -> Architecture -> Applications
+```
+
+```text
+substrate/      what is being computed: nine primitives every subject declares
+architecture/   how a system operates around it: proposals, gates, commit,
+                trace, replay, memory
+applications/   worked examples in specific domains
+research/       theory, references, and what each result covers
+labs/           runnable evals with result records
 archive/        historical material
 ```
 
-Start with [FOUNDATION_TRAVERSAL.md](FOUNDATION_TRAVERSAL.md) when you need to
-choose the right CGF pieces for a project. Start with
-[substrate/README.md](substrate/README.md) when you already know you need to
-declare a Substrate subject.
+The Substrate layer asks every subject to declare graph, typed field,
+placement, state, action, constraint, evolution, readout, and validation. The
+Architecture layer keeps proposing, verifying, and committing apart, so that
+every decision can be traced and replayed.
 
-Start with [architecture/execution-graph.md](architecture/execution-graph.md)
-when the problem is a bot, runtime, workflow, processor, or system that must
-act, remember outcomes, and replay decisions.
+## Where To Start
 
-Start with [architecture/granular-analysis.md](architecture/granular-analysis.md)
-when one input should be analyzed through many lenses, encoders, or proposal
-nodes before producing a traceable outcome.
+| You want to | Start with |
+| --- | --- |
+| Choose the right pieces for a project | [FOUNDATION_TRAVERSAL.md](FOUNDATION_TRAVERSAL.md) |
+| Declare a subject | [substrate/README.md](substrate/README.md) |
+| Build a bot, runtime, workflow, or processor that acts and remembers | [architecture/execution-graph.md](architecture/execution-graph.md) |
+| Analyze one input through many lenses | [architecture/granular-analysis.md](architecture/granular-analysis.md) |
+| Keep evidence, views, routes, proposals, and review apart | [architecture/multimodal-outcome-stack.md](architecture/multimodal-outcome-stack.md) |
+| Pick reusable framework cards | [architecture/frameworks/README.md](architecture/frameworks/README.md) |
+| Fork a demo | [applications/DEMO_GUIDE.md](applications/DEMO_GUIDE.md) |
+| See a review application end to end | [applications/medical-image-analysis/walkthrough.md](applications/medical-image-analysis/walkthrough.md) |
+| Apply CGF step by step | [templates/how-to-use-cgf.md](templates/how-to-use-cgf.md) |
+| Record a project decision | [templates/project-intake.md](templates/project-intake.md) |
+| See what supports a concept | [research/connection-map.md](research/connection-map.md) |
 
-Start with
-[architecture/multimodal-outcome-stack.md](architecture/multimodal-outcome-stack.md)
-when source evidence, typed records, feature views, processor routes, proposals,
-review state, and trace all need to stay separated.
+## How To Read The Results
 
-Start with [applications/DEMO_GUIDE.md](applications/DEMO_GUIDE.md) when you
-want a forkable demo path with honest claim boundaries: Signal Review, Medical
-Image Analysis, and Graph Memory Bot.
+Labs holds 26 evals. Each result record names its layer:
 
-Start with [applications/medical-image-analysis/walkthrough.md](applications/medical-image-analysis/walkthrough.md)
-when you want to see that stack used in a medical image analysis review application with
-no medical claim.
+- 19 are isolated. They show a concept is implemented as declared, on small
+  fixtures.
+- 1 is an integration eval over a small mix of concepts.
+- 6 are value-over-baseline. They compare a concept with a simpler baseline on
+  seeded data and record where it does not help.
 
-Start with [architecture/frameworks/README.md](architecture/frameworks/README.md)
-when you need reusable framework concepts before choosing an application.
+The labels are defined in [labs/evals/README.md](labs/evals/README.md). Public
+sources for the theory are in [research/references.md](research/references.md).
 
-Use [templates/project-intake.md](templates/project-intake.md) to record a
-project-level CGF traversal decision.
+## Scope
 
-Use [templates/how-to-use-cgf.md](templates/how-to-use-cgf.md) for a short
-step-by-step guide to applying CGF without adopting a mandatory SDK.
+CGF is patterns, contracts, and reference code. It does not ship an SDK, a
+graph database, or a solver, and code stays local to the section that owns it.
+Every result here comes from synthetic fixtures, so none of it measures
+performance on real data in any domain.
 
-Current release notes live in [RELEASE_NOTES.md](RELEASE_NOTES.md). The public
-base release manifest lives in [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md).
-Readiness is tracked in [PUBLIC_BASE_CHECKLIST.md](PUBLIC_BASE_CHECKLIST.md)
-and summarized in [ROADMAP.md](ROADMAP.md).
+## Webots Applications
 
-For editing and creation standards, see [agent.md](agent.md).
-For contribution help, see [CONTRIBUTING.md](CONTRIBUTING.md) and
-[SUPPORT.md](SUPPORT.md). Report security-sensitive problems through the
-process in [SECURITY.md](SECURITY.md).
+The Webots applications are optional. Their worlds target Webots R2025a and
+reference version-pinned upstream PROTO and texture assets, so the first load
+needs network access unless those assets are cached. The industrial robot arm
+can use `ikpy` 3.0 or newer and otherwise uses its documented fallback.
+
+## Project Documents
+
+- Release: [RELEASE_NOTES.md](RELEASE_NOTES.md),
+  [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md), [ROADMAP.md](ROADMAP.md), and
+  [PUBLISHING.md](PUBLISHING.md).
+- Contributing: [agent.md](agent.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
+  [SUPPORT.md](SUPPORT.md).
+- Security reports: [SECURITY.md](SECURITY.md).
 
 ## License
 

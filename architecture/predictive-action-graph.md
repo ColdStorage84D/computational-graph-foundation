@@ -126,5 +126,5 @@ smaller dependency-light examples for topology, trace, action gates, and graph
 runtime memory.
 
 Claim boundary: these examples demonstrate graph action and memory concepts.
-They do not claim autonomous robot performance, benchmark success, guaranteed
-maze solving, AGI, or biological cortex.
+They do not claim autonomous robot performance, benchmark success, or
+guaranteed maze solving.

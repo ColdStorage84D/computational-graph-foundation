@@ -37,7 +37,7 @@ the correct next step without guessing:
 | [research/connection-map.md](research/connection-map.md) | What Research and Labs support exists for a concept? |
 | [labs/evals/README.md](labs/evals/README.md) | Which evals are runnable, and what does each result label mean? |
 | [ROADMAP.md](ROADMAP.md) | What is done, what is deferred, and what is next? |
-| [RELEASE_NOTES.md](RELEASE_NOTES.md) | What is included in the first public base snapshot? |
+| [RELEASE_NOTES.md](RELEASE_NOTES.md) | What changed in each public snapshot? |
 | [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md) | What was verified for the current public base snapshot? |
 | [PUBLISHING.md](PUBLISHING.md) | How is a candidate prepared, verified, tagged, and published? |
 | [agent.md](agent.md) | What standards should agents and contributors follow when editing or applying CGF? |
@@ -47,36 +47,40 @@ the correct next step without guessing:
 
 ## Supported Contract-Pass Claims
 
-Each `contract-pass` claim is limited to the tiny CGF-local fixture and contract
-described by its eval folder. It is not a broad domain-performance claim.
+Each `contract-pass` claim is limited to the fixture and contract described by
+its eval folder. The layer says what kind of contract it was: an isolated or
+integration eval shows a concept is implemented as declared, and a
+value-over-baseline eval also compares it with a simpler baseline on seeded
+synthetic data.
 
-| Area | Result |
-| --- | --- |
-| Action-native computation | [labs/evals/action-native-computation/results.md](labs/evals/action-native-computation/results.md) |
-| Anchor / Lens / Promise | [labs/evals/anchor-lens-promise/results.md](labs/evals/anchor-lens-promise/results.md) |
-| Basis-mode representation | [labs/evals/basis-mode-representation/results.md](labs/evals/basis-mode-representation/results.md) |
-| Bayesian filtering / state estimation | [labs/evals/bayesian-filtering/results.md](labs/evals/bayesian-filtering/results.md) |
-| Causal intervention | [labs/evals/causal-intervention/results.md](labs/evals/causal-intervention/results.md) |
-| CellComplexView | [labs/evals/cell-complex-view/results.md](labs/evals/cell-complex-view/results.md) |
-| Cortical-Column World Model | [labs/evals/cortical-column-world-model/results.md](labs/evals/cortical-column-world-model/results.md) |
-| Evidence Graph Triage | [labs/evals/evidence-graph-triage/results.md](labs/evals/evidence-graph-triage/results.md) |
-| Exterior placement | [labs/evals/exterior-placement/results.md](labs/evals/exterior-placement/results.md) |
-| Gauge transport | [labs/evals/gauge-transport/results.md](labs/evals/gauge-transport/results.md) |
-| Granular Analysis | [labs/evals/granular-analysis/results.md](labs/evals/granular-analysis/results.md) |
-| Hierarchical execution cycles | [labs/evals/hierarchical-cycles/results.md](labs/evals/hierarchical-cycles/results.md) |
-| Hyperbolic / metric placement | [labs/evals/hyperbolic-placement/results.md](labs/evals/hyperbolic-placement/results.md) |
-| Information geometry | [labs/evals/information-geometry/results.md](labs/evals/information-geometry/results.md) |
-| Multimodal Outcome Stack | [labs/evals/multimodal-framework-mix/results.md](labs/evals/multimodal-framework-mix/results.md) |
-| Operator learning discipline | [labs/evals/operator-learning/results.md](labs/evals/operator-learning/results.md) |
-| Port-Hamiltonian flow | [labs/evals/port-hamiltonian-flow/results.md](labs/evals/port-hamiltonian-flow/results.md) |
-| Provisional Graph Growth | [labs/evals/provisional-graph-growth/results.md](labs/evals/provisional-graph-growth/results.md) |
-| Renormalization / coarse-graining | [labs/evals/renormalization-coarse-graining/results.md](labs/evals/renormalization-coarse-graining/results.md) |
-| Sheaf consistency | [labs/evals/sheaf-consistency/results.md](labs/evals/sheaf-consistency/results.md) |
-| Signal Review | [labs/evals/signal-review/results.md](labs/evals/signal-review/results.md) |
-| Stochastic transition | [labs/evals/stochastic-transition/results.md](labs/evals/stochastic-transition/results.md) |
-| Topological rigidity | [labs/evals/topological-rigidity/results.md](labs/evals/topological-rigidity/results.md) |
-| Visual Media Encoding | [labs/evals/visual-media-encoding/results.md](labs/evals/visual-media-encoding/results.md) |
-| Weak form | [labs/evals/weak-form/results.md](labs/evals/weak-form/results.md) |
+| Area | Layer | Result |
+| --- | --- | --- |
+| Action-native computation | isolated | [labs/evals/action-native-computation/results.md](labs/evals/action-native-computation/results.md) |
+| Anchor / Lens / Promise | isolated | [labs/evals/anchor-lens-promise/results.md](labs/evals/anchor-lens-promise/results.md) |
+| Basis-mode representation | isolated | [labs/evals/basis-mode-representation/results.md](labs/evals/basis-mode-representation/results.md) |
+| Bayesian filtering / state estimation | value-over-baseline | [labs/evals/bayesian-filtering/results.md](labs/evals/bayesian-filtering/results.md) |
+| Causal intervention | isolated | [labs/evals/causal-intervention/results.md](labs/evals/causal-intervention/results.md) |
+| CellComplexView | isolated | [labs/evals/cell-complex-view/results.md](labs/evals/cell-complex-view/results.md) |
+| Evidence Graph Triage | value-over-baseline | [labs/evals/evidence-graph-triage/results.md](labs/evals/evidence-graph-triage/results.md) |
+| Exterior placement | isolated | [labs/evals/exterior-placement/results.md](labs/evals/exterior-placement/results.md) |
+| Gauge transport | value-over-baseline | [labs/evals/gauge-transport/results.md](labs/evals/gauge-transport/results.md) |
+| Granular Analysis | value-over-baseline | [labs/evals/granular-analysis/results.md](labs/evals/granular-analysis/results.md) |
+| Hierarchical execution cycles | isolated | [labs/evals/hierarchical-cycles/results.md](labs/evals/hierarchical-cycles/results.md) |
+| Hyperbolic / metric placement | value-over-baseline | [labs/evals/hyperbolic-placement/results.md](labs/evals/hyperbolic-placement/results.md) |
+| Information geometry | isolated | [labs/evals/information-geometry/results.md](labs/evals/information-geometry/results.md) |
+| Local-Voting World Model | isolated | [labs/evals/local-voting-world-model/results.md](labs/evals/local-voting-world-model/results.md) |
+| Multimodal Outcome Stack | integration | [labs/evals/multimodal-framework-mix/results.md](labs/evals/multimodal-framework-mix/results.md) |
+| Path-conditioned and path-gated operators | value-over-baseline | [labs/evals/path-gated-operators/results.md](labs/evals/path-gated-operators/results.md) |
+| Port-Hamiltonian flow | isolated | [labs/evals/port-hamiltonian-flow/results.md](labs/evals/port-hamiltonian-flow/results.md) |
+| Provisional Graph Growth | isolated | [labs/evals/provisional-graph-growth/results.md](labs/evals/provisional-graph-growth/results.md) |
+| Renormalization / coarse-graining | isolated | [labs/evals/renormalization-coarse-graining/results.md](labs/evals/renormalization-coarse-graining/results.md) |
+| Sheaf consistency | isolated | [labs/evals/sheaf-consistency/results.md](labs/evals/sheaf-consistency/results.md) |
+| Signal Review | isolated | [labs/evals/signal-review/results.md](labs/evals/signal-review/results.md) |
+| Stochastic transition | isolated | [labs/evals/stochastic-transition/results.md](labs/evals/stochastic-transition/results.md) |
+| Surrogate promotion | isolated | [labs/evals/surrogate-promotion/results.md](labs/evals/surrogate-promotion/results.md) |
+| Topological rigidity | isolated | [labs/evals/topological-rigidity/results.md](labs/evals/topological-rigidity/results.md) |
+| Visual Media Encoding | isolated | [labs/evals/visual-media-encoding/results.md](labs/evals/visual-media-encoding/results.md) |
+| Weak form | isolated | [labs/evals/weak-form/results.md](labs/evals/weak-form/results.md) |
 
 ## Known Non-Blocking Gaps
 
@@ -87,11 +91,15 @@ These gaps do not block the public base when they remain clearly marked:
 - Attractor Diagnostics remains research-supported with no direct Labs eval yet;
 - higher-dimensional topology remains research-only until narrowed into a
   card, example, or eval;
-- offline replay / dream cycles, cognitive map memory, and engram / spatial
-  memory remain Architecture patterns without direct Labs evals yet;
+- offline replay cycles, cognitive map memory, and cued recall memory remain
+  Architecture patterns without direct Labs evals yet;
 - Architecture framework cards without direct evals must keep their claim
   boundary visible;
-- applications remain examples, not proof that a domain is solved.
+- applications remain examples, not proof that a domain is solved;
+- no eval is recipe-grounded, and no result is measured on real data;
+- the topics listed as still unreferenced in
+  [research/references.md](research/references.md) have no checked public
+  source yet.
 
 ## Final Checks
 
@@ -139,4 +147,9 @@ Expected results:
 - the release tree is free of tracked generated artifacts;
 - repository-root publishing metadata and automation are in the location used
   by the publishing host;
-- all Labs result records and cross-layer evidence links agree.
+- all Labs result records and cross-layer evidence links agree;
+- every result record declares a status, an eval layer, and a claim boundary;
+- every value-over-baseline record has a runnable comparison, names its
+  baseline, and says where the concept does not help;
+- every extension study has a References section with an external source;
+- the counts in the release notes and manifest equal the counts in the tree.

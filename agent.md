@@ -32,7 +32,8 @@ main navigation surface:
 | [substrate/derivatives/action-native-computation.md](substrate/derivatives/action-native-computation.md) | Use when a project frames calculation as graph-state evolution under an action, law, energy, loss, objective, constraint, or residual. |
 | [substrate/derivatives/stationary-path.md](substrate/derivatives/stationary-path.md) | Use when stationary action, least action, geodesic, variational path, admissible variation, or residual-based stationarity appears. |
 | [research/connection-map.md](research/connection-map.md) | Trace each supported topic through Substrate surface, Research support, Labs result, and claim boundary. |
-| [labs/evals/README.md](labs/evals/README.md) | Find runnable evals and understand result labels such as `contract-pass`. |
+| [labs/evals/README.md](labs/evals/README.md) | Find runnable evals and understand result labels such as `contract-pass` and eval layers such as value-over-baseline. |
+| [research/references.md](research/references.md) | Find the checked public sources behind a concept, and the topics that still have none. |
 | [labs/evals/evaluation-methodology.md](labs/evals/evaluation-methodology.md) | Use when deciding whether a result is isolated, integration, value-over-baseline, recipe-grounded, or ready for promotion. |
 | [architecture/README.md](architecture/README.md) | Check whether a problem belongs to Architecture instead of Substrate. |
 | [architecture/INDEX.md](architecture/INDEX.md) | Navigate Architecture runtime spine, patterns, contracts, and examples. |
@@ -50,9 +51,9 @@ main navigation surface:
 | [architecture/subgraph-role-registry.md](architecture/subgraph-role-registry.md) | Use when subgraphs need clear roles such as worker, verifier, memory, route, adapter, or sandbox. |
 | [architecture/belief-state.md](architecture/belief-state.md) | Use when an Architecture layer holds a noisy estimate rather than directly observed truth. |
 | [architecture/bayesian-filtering-state-estimation.md](architecture/bayesian-filtering-state-estimation.md) | Use when predict/update filtering, innovation, gain, or covariance should be traceable. |
-| [architecture/offline-replay-dream-cycles.md](architecture/offline-replay-dream-cycles.md) | Use when offline replay, simulated alternatives, or consolidation cycles appear. |
+| [architecture/offline-replay-cycles.md](architecture/offline-replay-cycles.md) | Use when offline replay, simulated alternatives, or consolidation cycles appear. |
 | [architecture/cognitive-map-memory.md](architecture/cognitive-map-memory.md) | Use when place, route, landmark, or spatial-context recall must be graph memory instead of notes. |
-| [architecture/engram-spatial-memory.md](architecture/engram-spatial-memory.md) | Use when episode fragments, cues, and spatial recall need bounded reactivation rules. |
+| [architecture/cued-recall-memory.md](architecture/cued-recall-memory.md) | Use when episode fragments, cues, and spatial recall need bounded reactivation rules. |
 | [architecture/graph-brain-and-spine.md](architecture/graph-brain-and-spine.md) | Separate brain coordination, spine routing, surface nodes, child graphs, and the core cycle. |
 | [architecture/subgraph-capsules.md](architecture/subgraph-capsules.md) | Use when local graph detail should be routeable without hiding evidence or authority. |
 | [architecture/graph-runtime-memory.md](architecture/graph-runtime-memory.md) | Distinguish graph runtime memory from agent/project memory and define memory roles. |
@@ -233,8 +234,8 @@ state estimates under uncertainty. Use them when prediction, update,
 innovation, covariance, or confidence should be visible and bounded rather
 than treated as hidden truth.
 
-Offline Replay / Dream Cycles, Cognitive Map Memory, and Engram / Spatial
-Memory are Architecture memory patterns. They may organize replayed,
+Offline Replay Cycles, Cognitive Map Memory, and Cued Recall Memory are
+Architecture memory patterns. They may organize replayed,
 simulated, spatial, or cued recall records, but real observed outcomes,
 counterfactuals, and recalled material must remain labeled separately.
 
@@ -349,6 +350,24 @@ When adding code later:
 - Prefer small, inspectable implementations over framework-heavy demos.
 - Keep generated artifacts out of the docs unless they are part of the example.
 
+## Eval Standard
+
+Labs evals follow [labs/evals/README.md](labs/evals/README.md) and
+[labs/evals/evaluation-methodology.md](labs/evals/evaluation-methodology.md).
+
+- Every result record declares a status, an eval layer, the reviewed command
+  or date, and a claim boundary.
+- An isolated eval shows that a concept is implemented as declared. Do not
+  describe it as evidence that the concept helps.
+- A claim that a concept helps needs a value-over-baseline eval: a seeded
+  `comparison.py`, thresholds in `test_comparison.py`, a named baseline, and a
+  `Where It Does Not Help` section in the result record.
+- When an eval is named after a mathematical object, `eval.py` must implement
+  that object and the owning study must cite a public source for it.
+- Counts written in release documents must equal the counts in the tree.
+
+`scripts/check_public_base.py` enforces these rules.
+
 ## Usage Standard
 
 CGF material should support three usage modes:
@@ -401,7 +420,7 @@ Every agent or contributor should make the path explicit:
   when parent graphs delegate work to specialist graph cycles;
 - Belief State and Bayesian Filtering selected or skipped when noisy hidden
   state is estimated;
-- Offline Replay / Dream, Cognitive Map, and Engram / Spatial Memory selected
+- Offline Replay, Cognitive Map, and Cued Recall Memory selected
   or skipped when replay, simulated consolidation, spatial recall, or cue-based
   recall appears;
 - Granular Analysis selected or skipped when one input can fan out through

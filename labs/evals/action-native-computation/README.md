@@ -19,9 +19,7 @@ The fixture covers three calculation families:
 
 ## Boundary
 
-This eval does not claim physics accuracy, solver quality, global optimization,
-autonomous reasoning, benchmark performance, analog-computing performance, or a
-general mathematical engine.
+The claim boundary is in [results.md](results.md).
 
-It only checks that the local CGF contract exposes action or law, constraints,
+The eval checks that the local CGF contract exposes action or law, constraints,
 evolution, residual/error, validation, and readout before accepting a result.

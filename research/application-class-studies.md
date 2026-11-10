@@ -101,7 +101,7 @@ Promotion criteria:
 
 CGF eval result:
 
-[../labs/evals/operator-learning/results.md](../labs/evals/operator-learning/results.md)
+[../labs/evals/surrogate-promotion/results.md](../labs/evals/surrogate-promotion/results.md)
 records a `contract-pass` result for the tiny CGF-local promotion-discipline
 eval. The claim is limited to that fixture.
 
@@ -148,3 +148,10 @@ An application-class study can become an Application page when it has:
 - any extension choices justified by failure modes;
 - a small example that does not require a mandatory SDK;
 - validation checks that make failure visible.
+
+## References
+
+Public sources for the application classes on this page that name outside work.
+
+- [DeepONet: Learning nonlinear operators](https://arxiv.org/abs/1910.03193), Lu, Jin, and Karniadakis (2019). Learning operators between function spaces from input-output pairs.
+- [Fourier Neural Operator for Parametric Partial Differential Equations](https://arxiv.org/abs/2010.08895), Li et al. (2020). A learned operator that transfers across discretizations.

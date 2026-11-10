@@ -25,7 +25,7 @@ details, but the reusable concept should remain here.
 - [typed-multimodal-graph-framework.md](typed-multimodal-graph-framework.md)
 - [feature-view-framework.md](feature-view-framework.md)
 - [granular-analysis-framework.md](granular-analysis-framework.md)
-- [cortical-column-world-model-framework.md](cortical-column-world-model-framework.md)
+- [local-voting-world-model-framework.md](local-voting-world-model-framework.md)
 - [provisional-graph-growth-framework.md](provisional-graph-growth-framework.md)
 - [proposer-verifier-framework.md](proposer-verifier-framework.md)
 - [processor-routing-framework.md](processor-routing-framework.md)

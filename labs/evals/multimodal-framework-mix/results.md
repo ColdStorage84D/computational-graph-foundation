@@ -2,6 +2,8 @@
 
 Status: `contract-pass`
 
+Eval layer: `integration`
+
 ## Reviewed Command
 
 ```powershell

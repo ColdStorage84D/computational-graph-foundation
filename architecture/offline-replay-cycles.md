@@ -1,6 +1,6 @@
-# Offline Replay / Dream Cycles
+# Offline Replay Cycles
 
-Offline Replay / Dream Cycles are Architecture patterns for resolving late
+Offline Replay Cycles are Architecture patterns for resolving late
 outcomes, replaying real traces, and generating counterfactual hypotheses
 without confusing those hypotheses with outcome-backed memory.
 
@@ -23,7 +23,7 @@ value. Counterfactual simulations can create hypotheses, but not durable truth.
 | --- | --- |
 | Resolve | Attach late outcomes to eligible committed traces. |
 | Replay | Re-run real traces for consolidation or review. |
-| Dream | Generate counterfactual candidates or failure hypotheses. |
+| Simulate | Generate counterfactual candidates or failure hypotheses. |
 | Promotion review | Decide whether repeated resolved outcomes justify promotion. |
 
 ## Minimum Record
@@ -41,7 +41,7 @@ trace_refs
 
 ## Boundary
 
-Dream output is not observed outcome. It can guide future proposals or tests,
+Simulated output is not observed outcome. It can guide future proposals or tests,
 but value and durable promotion require resolved real outcomes.
 
 ## Promotion Review And Provisional Growth
@@ -58,3 +58,12 @@ rollback policy.
 ## Claim Boundary
 
 This is a docs-led Architecture pattern. No direct Labs eval exists yet.
+
+## References
+
+Public sources for replaying stored experience and for learning from simulated experience, which earlier drafts of this page called dream cycles.
+
+- [Self-improving reactive agents based on reinforcement learning, planning and teaching](https://doi.org/10.1007/BF00992699), Lin (1992). Experience replay: reusing stored transitions for learning.
+- [Human-level control through deep reinforcement learning](https://doi.org/10.1038/nature14236), Mnih et al. (2015). Experience replay at scale in a learning agent.
+- [Dream to Control: Learning Behaviors by Latent Imagination](https://arxiv.org/abs/1912.01603), Hafner, Lillicrap, Ba, and Norouzi (2019). Learning from rollouts imagined by a model, kept separate from real experience.
+- [Reactivation of Hippocampal Ensemble Memories During Sleep](https://doi.org/10.1126/science.8036517), Wilson and McNaughton (1994). The observation in animals that waking activity patterns are replayed offline.

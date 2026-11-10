@@ -15,3 +15,6 @@ one sample
 ```
 
 No clinical data, patient data, or diagnostic label is included.
+
+The comparison generates seeded two-outcome cases with three lenses whose
+blind spots are either independent or shared.

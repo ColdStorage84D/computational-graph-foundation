@@ -88,3 +88,11 @@ restriction maps remain the main future work.
 ## CGF Eval Result
 
 See [../../labs/evals/sheaf-consistency/results.md](../../labs/evals/sheaf-consistency/results.md).
+
+## References
+
+Public sources for sheaves on graphs. The eval implements the cellular sheaf, coboundary, and sheaf Laplacian described in Hansen and Ghrist.
+
+- [Toward a Spectral Theory of Cellular Sheaves](https://arxiv.org/abs/1808.01513), Hansen and Ghrist (2018). Cellular sheaves on graphs, global sections as the kernel of the coboundary, and the sheaf Laplacian.
+- [Sheaves, Cosheaves and Applications](https://arxiv.org/abs/1303.3255), Curry (2013). Cellular sheaves and cosheaves in general, with applications.
+- [Neural Sheaf Diffusion: A Topological Perspective on Heterophily and Oversmoothing in GNNs](https://arxiv.org/abs/2202.04579), Bodnar et al. (2022). Diffusion under a sheaf Laplacian used in a learning setting.

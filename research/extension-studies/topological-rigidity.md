@@ -197,3 +197,9 @@ larger evals.
 ## CGF Eval Result
 
 See [../../labs/evals/topological-rigidity/results.md](../../labs/evals/topological-rigidity/results.md).
+
+## References
+
+Public source for the general problem. The retention metrics, collapse risk, and evidence records in this study are CGF constructs and are not taken from it.
+
+- [Topology and data](https://doi.org/10.1090/S0273-0979-09-01249-X), Carlsson (2009). Why loops and other topological features of data matter and how projections can destroy them.

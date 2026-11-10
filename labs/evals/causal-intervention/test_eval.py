@@ -31,8 +31,8 @@ class CausalInterventionEvalTest(unittest.TestCase):
         self.assertEqual(ev.score_attribution(distractor, outcome, ("source", "bridge", "sink")), 0.0)
 
     def test_counterfactual_promotion_is_blocked(self):
-        dream = ev.mark_counterfactual("dream", "route", "alternate")
-        self.assertTrue(ev.block_counterfactual_promotion(dream))
+        simulated = ev.mark_counterfactual("simulated", "route", "alternate")
+        self.assertTrue(ev.block_counterfactual_promotion(simulated))
 
     def test_missing_intervention_scope_rejects(self):
         with self.assertRaises(ValueError):

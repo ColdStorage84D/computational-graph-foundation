@@ -6,7 +6,7 @@ import unittest
 
 def load_eval():
     path = Path(__file__).with_name("eval.py")
-    spec = importlib.util.spec_from_file_location("cgf_cortical_column_world_model_eval", path)
+    spec = importlib.util.spec_from_file_location("cgf_local_voting_world_model_eval", path)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
     sys.modules[spec.name] = module
@@ -17,15 +17,15 @@ def load_eval():
 ev = load_eval()
 
 
-class CorticalColumnWorldModelEvalTest(unittest.TestCase):
+class LocalVotingWorldModelEvalTest(unittest.TestCase):
     def test_path_integration_binds_features_to_locations(self):
-        column = ev.CorticalColumn("probe-column")
+        column = ev.PredictiveColumn("probe-column")
         events = column.learn_from(ev.OBJECT_LIBRARY["object:cup"])
 
-        self.assertEqual((0, 0), events[0].layer6_reference_position)
-        self.assertEqual("handle_curve", events[0].layer4_feature_input)
-        self.assertEqual((1, 0), events[1].layer5_action_output)
-        self.assertEqual((2, 0), events[2].layer6_reference_position)
+        self.assertEqual((0, 0), events[0].reference_position)
+        self.assertEqual("handle_curve", events[0].feature_input)
+        self.assertEqual((1, 0), events[1].action_output)
+        self.assertEqual((2, 0), events[2].reference_position)
         self.assertEqual("rim_arc", column.object_maps["object:cup"][(2, 0)])
 
     def test_single_column_observations_are_ambiguous(self):
@@ -72,7 +72,7 @@ class CorticalColumnWorldModelEvalTest(unittest.TestCase):
         result = ev.run_fixture()
 
         self.assertIn("Toy graph mechanism only", result.claim_boundary)
-        self.assertIn("No biological, AGI, or real-world performance claim", result.claim_boundary)
+        self.assertIn("No real-world performance claim", result.claim_boundary)
 
 
 if __name__ == "__main__":

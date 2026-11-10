@@ -104,3 +104,11 @@ Status: active research.
 The conceptual boundary model is strong enough for research pages and future
 examples. It needs narrower examples before becoming a dedicated extension
 card beyond the existing topological and placement cards.
+
+## References
+
+Public sources for computation on domains above graphs.
+
+- [Topological Deep Learning: Going Beyond Graph Data](https://arxiv.org/abs/2206.00606), Hajij et al. (2022). Simplicial, cell, and combinatorial complexes as domains for computation.
+- [Hodge Laplacians on Graphs](https://doi.org/10.1137/18M1223101), Lim (2020). Hodge Laplacians and higher-order boundary structure on graphs.
+- [Weisfeiler and Lehman Go Cellular: CW Networks](https://arxiv.org/abs/2106.12575), Bodnar et al. (2021). A worked lifting from graphs to cell complexes.
