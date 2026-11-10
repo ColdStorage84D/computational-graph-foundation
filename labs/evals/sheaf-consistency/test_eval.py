@@ -49,7 +49,7 @@ class SheafConsistencyEvalTest(unittest.TestCase):
         self.assertEqual(glued["merged_payload"], {})
 
     def test_counterfactual_status_survives(self):
-        left = ev.LocalView("dream", "overlap", {"risk": "high"}, "counterfactual")
+        left = ev.LocalView("simulated", "overlap", {"risk": "high"}, "counterfactual")
         right = ev.LocalView("real", "overlap", {"risk": "high"}, "observed")
         glued = ev.glue_views(left, right, ev.compare_overlap(left, right))
         self.assertEqual(glued["status"], "counterfactual")

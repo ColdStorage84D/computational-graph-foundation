@@ -1,4 +1,4 @@
-# Operator Learning Eval
+# Surrogate Promotion Eval
 
 Status: `contract-pass`
 

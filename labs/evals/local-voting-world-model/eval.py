@@ -1,7 +1,7 @@
-"""Toy cortical-column world-model eval for CGF.
+"""Toy local-voting world-model eval for CGF.
 
-This is a small mechanism test, not a biological simulation. It models a few
-ideas from cortical-column and Thousand Brains style descriptions:
+This is a small mechanism test. It models a few ideas adapted from the
+Thousand Brains proposal; the Architecture guide lists the references:
 
 - feature input is bound to a location in a local reference frame;
 - movement updates the local reference-frame position by path integration;
@@ -44,9 +44,9 @@ class LearningEvent:
     action_delta: Coord
     position: Coord
     feature: str
-    layer4_feature_input: str
-    layer5_action_output: Coord
-    layer6_reference_position: Coord
+    feature_input: str
+    action_output: Coord
+    reference_position: Coord
 
 
 @dataclass(frozen=True)
@@ -97,15 +97,15 @@ class WorldModelRun:
 
 
 @dataclass
-class CorticalColumn:
+class PredictiveColumn:
     """Local feature-location model with path integration.
 
     The names mirror the concept being tested:
 
-    - layer 4 receives the current feature;
-    - layer 5 emits movement as a local action delta;
-    - layer 6 stores the current reference-frame position;
-    - layers 2/3 are represented by object hypotheses used in voting.
+    - the feature input receives the current feature;
+    - the action output emits movement as a local action delta;
+    - the reference position stores the current reference-frame position;
+    - object hypotheses carry the state used in voting.
     """
 
     column_id: str
@@ -152,9 +152,9 @@ class CorticalColumn:
                     action_delta=action_delta,
                     position=self.position,
                     feature=feature,
-                    layer4_feature_input=feature,
-                    layer5_action_output=action_delta,
-                    layer6_reference_position=self.position,
+                    feature_input=feature,
+                    action_output=action_delta,
+                    reference_position=self.position,
                 )
             )
         return tuple(events)
@@ -288,9 +288,9 @@ OBJECT_LIBRARY: dict[str, WorldObject] = {
 
 
 def train_columns(column_ids: tuple[str, ...] = ("thumb-column", "index-column")) -> tuple[
-    tuple[CorticalColumn, ...], tuple[LearningEvent, ...]
+    tuple[PredictiveColumn, ...], tuple[LearningEvent, ...]
 ]:
-    columns = tuple(CorticalColumn(column_id) for column_id in column_ids)
+    columns = tuple(PredictiveColumn(column_id) for column_id in column_ids)
     events: list[LearningEvent] = []
     for column in columns:
         for world_object in OBJECT_LIBRARY.values():
@@ -299,7 +299,7 @@ def train_columns(column_ids: tuple[str, ...] = ("thumb-column", "index-column")
 
 
 def observe_object(
-    columns: tuple[CorticalColumn, ...],
+    columns: tuple[PredictiveColumn, ...],
     world_object: WorldObject,
     contacts: Mapping[str, Coord],
 ) -> tuple[Observation, ...]:
@@ -320,7 +320,7 @@ def observe_object(
 
 
 def predict_after_action(
-    column: CorticalColumn,
+    column: PredictiveColumn,
     world_object: WorldObject,
     object_ref: str,
     action_delta: Coord,
@@ -372,6 +372,6 @@ def run_fixture() -> WorldModelRun:
         claim_boundary=(
             "Toy graph mechanism only: local feature-location memory, "
             "path integration, lateral voting, and one-step prediction. "
-            "No biological, AGI, or real-world performance claim."
+            "No real-world performance claim."
         ),
     )

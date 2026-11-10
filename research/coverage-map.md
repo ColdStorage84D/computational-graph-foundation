@@ -29,7 +29,7 @@ terms and should not require external project history to be understood.
 | Derivative mechanics | Substrate + Research | v0.2 docs exist; deeper study added | More math and validation notes |
 | Action-Native Computation | Substrate derivatives + Research + Labs | CGF-local eval `contract-pass` | Larger examples only after claim boundaries stay clear |
 | Domain-agnostic substrate charter | Research + Substrate | Public posture exists across README and Substrate docs | Sharper examples and release narrative |
-| Geometric discretization | Research extension study | Exterior placement and weak form now have tiny CGF-local evals | Substrate derivative and extension examples |
+| Geometric discretization | Research extension study | Exterior placement and a discrete weak form have CGF-local evals | Substrate derivative and extension examples |
 | Topology in CGF | Substrate extension guide + Research | Guide added; claims depend on selected topology concept | Narrower examples and evals later |
 | Higher-dimensional graphs | Research extension study | Public research page exists | Extension cards and examples when narrower |
 | CellComplexView | Substrate extension + Research | CGF-local eval `contract-pass` | Examples and topology guide refinements later |
@@ -46,18 +46,19 @@ terms and should not require external project history to be understood.
 | Renormalization / coarse-graining | Research extension study | CGF-local eval `contract-pass` | Scale-change examples later |
 | Bayesian filtering / state estimation | Architecture + Labs | CGF-local eval `contract-pass` | Deeper belief-state examples later |
 | Field-theoretic graph subjects | Research application class | Study added | Derivative examples later |
-| Operator learning | Research application class | CGF-local eval `contract-pass` | Differentiable backend examples later |
+| Operator learning | Research application class | Study added; only the surrogate promotion gate has a CGF-local eval | Differentiable backend examples later |
 | Physical computation patterns | Research application class | Study added | Pattern catalog later |
 | Anchor / Lens / Promise | Architecture + Labs | CGF-local eval `contract-pass` | More ingestion examples later |
 | Visual media encoding | Architecture + Labs | CGF-local eval `contract-pass` | Better media application examples later |
 | Hierarchical execution cycles | Architecture + Labs | CGF-local eval `contract-pass` | Integration examples later |
-| Cortical-Column World Model | Architecture + Labs | CGF-local eval `contract-pass` | Larger sensorimotor examples only within the documented claim boundary |
+| Local-Voting World Model | Architecture + Labs | CGF-local eval `contract-pass` | Larger sensorimotor examples only within the documented claim boundary |
 | Provisional Graph Growth | Architecture + Labs | CGF-local eval `contract-pass` | Application examples only after promotion and rollback boundaries stay clear |
-| Offline replay / dream cycles | Architecture | Docs-led; no direct Labs eval yet | Eval once claim becomes public |
+| Offline replay cycles | Architecture | Docs-led; no direct Labs eval yet | Eval once claim becomes public |
 | Cognitive map memory | Architecture | Docs-led; no direct Labs eval yet | Recall examples later |
-| Engram / spatial memory | Architecture | Docs-led; no direct Labs eval yet | Recall examples later |
+| Cued recall memory | Architecture | Docs-led; no direct Labs eval yet | Recall examples later |
 | Evidence Graph Triage | Architecture + Applications + Labs | CGF-local eval `contract-pass` | Larger triage examples only after value-key and decay behavior are reviewed against real review volume |
-| Value-over-baseline / recipe-grounded eval discipline | Labs | Methodology page added | First recipe-grounded CGF-local eval later |
+| Path-conditioned and path-gated operators | Architecture + Labs | Value-over-baseline eval `contract-pass` | Soft path gates and learned gates later |
+| Value-over-baseline / recipe-grounded eval discipline | Labs | Six value-over-baseline evals recorded; layer declared on every result | First recipe-grounded CGF-local eval later |
 | Evaluation backlog | Labs | Methodology exists; gaps remain explicit | Add CGF-local eval code before claims |
 | Path-state and operating contracts | Architecture | Bridge added | Architecture spec pass later |
 | Retired execution-graph material | Archive | Not promoted | Archive only if still useful |

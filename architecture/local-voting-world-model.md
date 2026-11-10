@@ -1,11 +1,11 @@
-# Cortical-Column World Model
+# Local-Voting World Model
 
 ## Purpose
 
-The Cortical-Column World Model is a reusable Architecture pattern for systems
+The Local-Voting World Model is a reusable Architecture pattern for systems
 that learn local sensorimotor predictions from bounded observations and actions.
 
-In CGF, a column is not a biological claim and not a maze cell. It is a local
+In CGF, a column is not a maze cell. It is a local
 subgraph surface that keeps evidence, predictions, prediction error, and
 outcome-coupled memory for one view or sensorimotor context.
 
@@ -96,7 +96,7 @@ should not be treated as learned preference.
 
 ## Minimum Declaration
 
-A cortical-column world-model implementation should declare:
+A local-voting world-model implementation should declare:
 
 ```text
 subject:
@@ -114,7 +114,7 @@ claim boundary:
 
 ## Current CGF Examples
 
-- [labs/evals/cortical-column-world-model](../labs/evals/cortical-column-world-model/README.md)
+- [labs/evals/local-voting-world-model](../labs/evals/local-voting-world-model/README.md)
   records the tiny-fixture `contract-pass` and its claim boundary.
 - [applications/bots](../applications/bots/README.md) is the public Graph
   Memory Bot skeleton. It demonstrates the reusable loop of candidate actions,
@@ -132,9 +132,14 @@ architecture.
 
 It does not claim:
 
-- biological cortical realism;
-- AGI, consciousness, or thinking;
 - a guaranteed maze solver;
 - benchmark success;
 - safety beyond declared gates and tests;
 - a mandatory SDK or runtime package.
+
+## References
+
+The mechanism is adapted from the Thousand Brains proposal about cortical columns, which is where the word column comes from. CGF uses the mechanism only: local units that bind features to locations, vote, and predict.
+
+- [A Theory of How Columns in the Neocortex Enable Learning the Structure of the World](https://doi.org/10.3389/fncir.2017.00081), Hawkins, Ahmad, and Cui (2017). Columns that learn objects as features at locations.
+- [A Framework for Intelligence and Cortical Function Based on Grid Cells in the Neocortex](https://doi.org/10.3389/fncir.2018.00121), Hawkins, Lewis, Klukas, Purdy, and Ahmad (2019). Many columns holding separate models and reaching agreement by voting.

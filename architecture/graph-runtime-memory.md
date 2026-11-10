@@ -34,7 +34,7 @@ commit, outcome, and memory update path.
 | Semantic/procedural projection | Promoted summaries or habits from repeated outcome-backed evidence. | Requires promotion rules and evidence refs. |
 | Policy memory | Outcome-backed or reviewed risk rules. | Must remain explicit and reviewable. |
 | Quarantine | Contradictory, dangerous, or low-trust memory isolated from promotion. | Blocks or raises review; does not silently vanish. |
-| Counterfactual memory | Hypotheses, rejected paths, simulations, or dream-like alternatives. | Cannot promote or update value as observed truth. |
+| Counterfactual memory | Hypotheses, rejected paths, simulations, or simulated alternatives. | Cannot promote or update value as observed truth. |
 
 ## Memory Flow
 
@@ -143,4 +143,12 @@ They cannot:
 7. Can promoted memory be traced to repeated or reviewed outcomes?
 8. Are counterfactual records blocked from observed-value updates?
 9. Can replay rebuild the memory projection?
+10. What happens to this memory when the world it describes changes?
 ```
+
+## Measured Example
+
+[applications/bots/memory-ablation.md](../applications/bots/memory-ablation.md)
+removes memory from a small maze controller and measures the difference. Kept
+memory reaches the shortest path in a stable maze. In a maze that changes
+between episodes, memory that never decays is far worse than no memory.

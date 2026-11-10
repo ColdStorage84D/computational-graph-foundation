@@ -6,7 +6,7 @@ import unittest
 
 def load_eval():
     path = Path(__file__).with_name("eval.py")
-    spec = importlib.util.spec_from_file_location("cgf_operator_learning_eval", path)
+    spec = importlib.util.spec_from_file_location("cgf_surrogate_promotion_eval", path)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
     sys.modules[spec.name] = module
@@ -17,8 +17,8 @@ def load_eval():
 ev = load_eval()
 
 
-class OperatorLearningEvalTest(unittest.TestCase):
-    def test_learned_operator_beats_baseline_on_heldout(self):
+class SurrogatePromotionEvalTest(unittest.TestCase):
+    def test_learned_surrogate_beats_baseline_on_heldout(self):
         train = ((0.0, 2.0), (1.0, 5.0), (2.0, 8.0))
         heldout = ((3.0, 11.0), (4.0, 14.0))
         model = ev.fit_affine(train)

@@ -43,3 +43,9 @@ foundation, not policy authority, and not durable truth without outcome support.
 ## Claim Boundary
 
 This is a docs-led Architecture guide. No direct Labs eval exists yet.
+
+## References
+
+Public source for the term.
+
+- [Cognitive maps in rats and men](https://doi.org/10.1037/h0061626), Tolman (1948). The original argument that behaviour uses a map-like representation of places and routes.

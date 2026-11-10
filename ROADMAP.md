@@ -30,7 +30,10 @@ The public base includes:
 - framework selection guide for choosing reusable Architecture cards;
 - Applications for bot / agent systems, medical image analysis review, signal /
   alert review, and industrial robot arm graph control demonstration;
-- Labs evals with bounded `contract-pass` claims;
+- Labs evals with a declared layer: 19 isolated, 1 integration, and 6
+  value-over-baseline;
+- a memory ablation for the bot example;
+- checked public references for every extension study;
 - section-local optional code only.
 - standalone publication, support, and security guidance.
 
@@ -43,16 +46,20 @@ These gaps are intentional and do not block the public base:
 - Attractor Diagnostics remains research-supported with no direct Labs eval yet;
 - higher-dimensional topology remains research-only until narrowed into
   cards, examples, or evals;
-- offline replay / dream cycles, cognitive map memory, and engram / spatial
-  memory remain Architecture patterns without direct Labs evals yet;
-- Architecture framework cards without direct evals must continue to say so.
+- offline replay cycles, cognitive map memory, and cued recall memory remain
+  Architecture patterns without direct Labs evals yet;
+- Architecture framework cards without direct evals must continue to say so;
+- no eval is recipe-grounded, and no result is measured on real data.
 
 Missing evals do not block release when docs clearly mark them as
 `no direct Labs eval yet`, `research-only`, or `draft`.
 
 ## Next Research
 
-- Public reference validation for research-heavy extension studies.
+- Public references for the topics listed as still unreferenced in
+  [research/references.md](research/references.md).
+- A recipe-grounded eval built from a real application failure mode.
+- Value-over-baseline comparisons for the evals that are still isolated.
 - Larger evals for topological rigidity, CellComplexView, weak form, exterior
   placement, and derivative mechanics.
 - A narrowed Attractor Diagnostics eval.
@@ -93,6 +100,9 @@ README, traversal, agent standards, and project intake agree.
 The public base checklist is current.
 Substrate and Architecture boundaries are clean.
 Labs claims are traceable to result files.
+Every result record declares its eval layer.
+Every extension study carries checked references.
+Release counts equal the counts in the tree.
 Applications are examples, not owners of reusable concepts.
 No stale project-history wording appears.
 No top-level SDK/package surface exists.

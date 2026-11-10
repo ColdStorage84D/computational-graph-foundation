@@ -24,9 +24,8 @@ durable graph mutation remains blocked until an explicit promotion gate passes.
 
 Status: `contract-pass`.
 
-This eval does not prove autonomous self-improvement, production graph safety,
-broad learning performance, or domain usefulness. It only verifies the local
-fixture contract.
+The eval verifies the local fixture contract. The claim boundary is in
+[results.md](results.md).
 
 ## Run
 

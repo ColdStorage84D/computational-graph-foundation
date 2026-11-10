@@ -180,3 +180,10 @@ stay subject-specific until more examples exist.
 ## CGF Eval Result
 
 See [../../labs/evals/information-geometry/results.md](../../labs/evals/information-geometry/results.md).
+
+## References
+
+Public sources for the Fisher metric and divergences. The eval implements the Fisher metric on the simplex and the Fisher-Rao distance described there.
+
+- [Information Geometry and Its Applications](https://doi.org/10.1007/978-4-431-55978-8), Amari (2016). The standard reference for statistical manifolds, the Fisher metric, and divergences.
+- [An elementary introduction to information geometry](https://arxiv.org/abs/1808.08271), Nielsen (2018). A short introduction covering the Fisher-Rao distance and its relation to KL divergence.

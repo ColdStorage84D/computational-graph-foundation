@@ -16,14 +16,14 @@ It owns runtime organization:
 - visual media encoding;
 - operating cycle;
 - hierarchical execution cycles;
-- offline replay / dream cycles;
+- offline replay cycles;
 - provisional graph growth;
 - operators, lenses, adapters, scorers, and projectors;
 - belief state and Bayesian filtering / state estimation;
 - granular analysis: many lenses, many proposers, one traceable outcome;
 - predictive action graph: candidate action sequences, predicted futures,
   gate / verifier, trace, and outcome-coupled memory;
-- cortical-column world model: local sensorimotor predictive subgraphs,
+- local-voting world model: local sensorimotor predictive subgraphs,
   lateral proposal aggregation, prediction error, and safety gate separation;
 - multimodal outcome stack: evidence records, typed multimodal graph, feature
   views, processor routes, proposals, review, and traceable outcome;
@@ -34,7 +34,7 @@ It owns runtime organization:
 - proposal, verifier, and commit patterns;
 - event log, trace, replay, and persistence;
 - eligibility, graph runtime memory, outcome feedback, and value feedback;
-- cognitive map memory and engram / spatial memory;
+- cognitive map memory and cued recall memory;
 - action accounting and policy gates;
 - evaluation discipline.
 
@@ -66,7 +66,7 @@ Core Architecture docs:
   and historical paths through runtime state.
 - [hierarchical-execution-cycles.md](hierarchical-execution-cycles.md):
   parent/child cycles, budgets, deferrals, and authority boundaries.
-- [offline-replay-dream-cycles.md](offline-replay-dream-cycles.md): late
+- [offline-replay-cycles.md](offline-replay-cycles.md): late
   outcome resolution, real-trace replay, and counterfactual hypothesis cycles.
 - [provisional-graph-growth.md](provisional-graph-growth.md): bounded graph
   adaptation through provisional capsules, candidate variants, promotion gates,
@@ -79,7 +79,7 @@ Core Architecture docs:
   agent/project memory.
 - [cognitive-map-memory.md](cognitive-map-memory.md): relational recall
   structure over physical, conceptual, or latent task spaces.
-- [engram-spatial-memory.md](engram-spatial-memory.md): sparse reactivatable
+- [cued-recall-memory.md](cued-recall-memory.md): sparse reactivatable
   episode traces.
 - [operating-cycle.md](operating-cycle.md): encode, propose, verify, commit,
   execute, observe, resolve, and consolidate.
@@ -87,7 +87,7 @@ Core Architecture docs:
   many lenses and proposers into one traceable outcome.
 - [predictive-action-graph.md](predictive-action-graph.md): action selection
   by comparing traceable predicted futures.
-- [cortical-column-world-model.md](cortical-column-world-model.md): local
+- [local-voting-world-model.md](local-voting-world-model.md): local
   sensorimotor predictive subgraphs, lateral aggregation, prediction error,
   and outcome-coupled memory.
 - [multimodal-outcome-stack.md](multimodal-outcome-stack.md): reusable
@@ -117,7 +117,7 @@ Framework catalog:
 - [frameworks/registry.md](frameworks/registry.md): reusable Architecture
   framework registry.
 - [frameworks/cards/README.md](frameworks/cards/README.md): compact framework
-  cards, including the cortical-column world-model framework. Applications
+  cards, including the local-voting world-model framework. Applications
   should compose these cards instead of owning reusable concepts.
 
 Reference code:

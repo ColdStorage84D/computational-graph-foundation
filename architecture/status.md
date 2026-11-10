@@ -16,7 +16,7 @@ It is ready enough for a developer to:
   outcome;
 - explain Predictive Action Graph as action selection by comparing predicted
   futures before committing one first action;
-- explain Cortical-Column World Model as local sensorimotor predictive
+- explain Local-Voting World Model as local sensorimotor predictive
   subgraphs that aggregate proposals, expose prediction error, and keep safety
   gates outside learned preference scoring;
 - explain the Multimodal Outcome Stack as evidence records, typed multimodal
@@ -31,8 +31,8 @@ It is ready enough for a developer to:
   bounded budgets and authority;
 - explain Belief State and Bayesian Filtering as traceable state estimates
   under uncertainty;
-- explain Offline Replay / Dream Cycles, Cognitive Map Memory, and Engram /
-  Spatial Memory as graph-memory patterns with labeled recall and replay
+- explain Offline Replay Cycles, Cognitive Map Memory, and Cued Recall
+  Memory as graph-memory patterns with labeled recall and replay
   boundaries;
 - explain Provisional Graph Growth as bounded graph adaptation with provisional
   capsules, candidate variants, stability guards, promotion gates, and rollback;
@@ -58,16 +58,16 @@ path-state graph
 proposal / verification / commit
 granular analysis
 predictive action graph
-cortical-column world model
+local-voting world model
 multimodal outcome stack
 signal review
 anchor / lens / promise
 visual media encoding
 hierarchical execution cycles
 belief state / Bayesian filtering
-offline replay / dream cycles
+offline replay cycles
 cognitive map memory
-engram / spatial memory
+cued recall memory
 provisional graph growth
 event log / trace / replay
 path-conditioned / path-gated operation
@@ -92,7 +92,7 @@ reusable Architecture framework cards
 - [predictive-action-graph.md](predictive-action-graph.md): action selection
   through candidate action sequences, predicted futures, gate, trace, and
   outcome-coupled memory.
-- [cortical-column-world-model.md](cortical-column-world-model.md): local
+- [local-voting-world-model.md](local-voting-world-model.md): local
   sensorimotor predictive subgraphs, lateral proposal aggregation, prediction
   error, outcome-coupled memory, and safety gate separation.
 - [multimodal-outcome-stack.md](multimodal-outcome-stack.md): reusable
@@ -111,14 +111,14 @@ reusable Architecture framework cards
   hidden truth.
 - [bayesian-filtering-state-estimation.md](bayesian-filtering-state-estimation.md):
   predict/update filtering, innovation, covariance, and traceable estimates.
-- [offline-replay-dream-cycles.md](offline-replay-dream-cycles.md): offline
+- [offline-replay-cycles.md](offline-replay-cycles.md): offline
   replay, simulated alternatives, consolidation, and claim boundaries.
 - [provisional-graph-growth.md](provisional-graph-growth.md): bounded graph
   adaptation through provisional structure, shadow scoring, promotion, and
   rollback.
 - [cognitive-map-memory.md](cognitive-map-memory.md): place, route, landmark,
   and spatial-context memory roles.
-- [engram-spatial-memory.md](engram-spatial-memory.md): cue-bounded recall and
+- [cued-recall-memory.md](cued-recall-memory.md): cue-bounded recall and
   spatial memory fragments.
 - [path-conditioned-and-path-gated.md](path-conditioned-and-path-gated.md):
   central path-aware Architecture primer.
@@ -148,7 +148,7 @@ An Architecture pattern is ready to guide implementation when it can answer:
 7. What verifies or rejects proposals?
 8. If Granular Analysis is used, which lenses and proposal nodes were considered?
 9. If Predictive Action Graph is used, which candidate actions, predicted futures, gate, selected first action, and rejected alternatives are visible?
-10. If Cortical-Column World Model is used, which local columns, predictions, residuals, aggregation records, safety gates, and memory updates are visible?
+10. If Local-Voting World Model is used, which local columns, predictions, residuals, aggregation records, safety gates, and memory updates are visible?
 11. If the Multimodal Outcome Stack is used, which evidence records, typed graph records, views, routes, proposals, and review states are separated?
 12. If Signal Review is used, which signal views, routes, proposals, verifier basis, and abstain or fallback reasons are visible?
 13. If Anchor / Lens / Promise is used, what anchor identifies the source, what
@@ -159,7 +159,7 @@ An Architecture pattern is ready to guide implementation when it can answer:
     and final-authority boundaries are declared?
 16. If Belief State or Bayesian Filtering is used, what prediction, update,
     uncertainty, innovation, and evidence refs are visible?
-17. If offline replay, cognitive map, or engram memory is used, how are real
+17. If offline replay, cognitive map, or cued recall memory is used, how are real
     observed outcomes separated from replayed, simulated, or recalled records?
 18. What commit boundary decides accepted action or non-action?
 19. What trace reconstructs the decision?

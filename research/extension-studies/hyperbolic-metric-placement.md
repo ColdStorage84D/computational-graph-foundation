@@ -85,3 +85,11 @@ before CGF should recommend one metric model as a default.
 ## CGF Eval Result
 
 See [../../labs/evals/hyperbolic-placement/results.md](../../labs/evals/hyperbolic-placement/results.md).
+
+## References
+
+Public sources for placing hierarchies in hyperbolic space. The comparison in the eval follows the construction idea in Sarkar: match radial growth to the branching factor.
+
+- [Low Distortion Delaunay Embedding of Trees in Hyperbolic Plane](https://doi.org/10.1007/978-3-642-25878-7_34), Sarkar (2012). A constructive embedding of trees in the hyperbolic plane with distortion as close to one as desired.
+- [Poincare Embeddings for Learning Hierarchical Representations](https://arxiv.org/abs/1705.08039), Nickel and Kiela (2017). Hierarchies embedded in the Poincare ball, and the distance formula the eval uses.
+- [Representation Tradeoffs for Hyperbolic Embeddings](https://arxiv.org/abs/1804.03329), De Sa, Gu, Re, and Sala (2018). The trade between distortion, dimension, and numerical precision.

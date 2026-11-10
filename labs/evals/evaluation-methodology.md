@@ -13,6 +13,19 @@ requirements have been met.
 | Value-over-baseline eval | Compares a concept against a simpler baseline on a named failure mode. | Local value improvement only when the baseline, metric, and fixture are declared. |
 | Recipe-grounded eval | Rewrites a real application failure mode as a self-contained CGF fixture. | Narrow recipe result only; no general domain claim. |
 
+Every result record declares its layer on an `Eval layer:` line. The layer is
+checked: a record that declares value-over-baseline or recipe-grounded must
+ship `comparison.py` and `test_comparison.py`, name its baseline, and include a
+`Where It Does Not Help` section. See [README.md](README.md).
+
+A value-over-baseline comparison should:
+
+- generate its data from a seed, so the numbers can be reproduced;
+- state the generator's assumptions as named parameters;
+- include at least one regime where those assumptions do not hold;
+- assert its pass thresholds in tests, including the regime where the concept
+  does not help.
+
 ## Promotion Gate
 
 A concept can move from research language into public CGF guidance when it has:

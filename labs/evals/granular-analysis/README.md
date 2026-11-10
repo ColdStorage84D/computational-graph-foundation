@@ -8,8 +8,15 @@ This eval tests the CGF-local Granular Analysis contract:
 one input -> many lenses -> many proposal nodes -> traceable outcome
 ```
 
-The fixture is synthetic and histology-like only. It is not clinical data, does
-not validate diagnosis, and does not claim medical performance.
+The contract fixture is one synthetic, histology-like sample.
+
+## Comparison
+
+`comparison.py` runs the reference engine on synthetic two-outcome cases. A
+lens looking into a blind spot reports confident support for the wrong
+outcome. The baseline gives the engine one lens. The variants give it three,
+with a proposer per pair of lenses or one proposer reading all three. A second
+regime makes all three lenses blind together.
 
 ## Connections
 
@@ -22,4 +29,12 @@ not validate diagnosis, and does not claim medical performance.
 
 ```powershell
 python -m unittest discover -s labs/evals/granular-analysis -p "test_*.py"
+python labs/evals/granular-analysis/comparison.py
 ```
+
+## Files
+
+- [eval.py](eval.py): the implementation under test.
+- [test_eval.py](test_eval.py): contract tests.
+- [comparison.py](comparison.py): seeded comparison against the baseline.
+- [test_comparison.py](test_comparison.py): thresholds for the comparison.

@@ -1,4 +1,4 @@
-# Cortical-Column World Model Framework
+# Local-Voting World Model Framework
 
 ## Purpose
 
@@ -7,8 +7,8 @@ whose predictions, uncertainty, and outcome memory shape action proposals.
 
 ## Reusable Concept
 
-A cortical column is a local evidence, prediction, and memory surface. It is
-not a maze cell and not a biological claim. Columns encode bounded sensory
+A column is a local evidence, prediction, and memory surface. It is
+not a maze cell. Columns encode bounded sensory
 views, predict outcomes under candidate actions, report residuals, and update
 memory only after observed outcomes.
 
@@ -51,7 +51,7 @@ Do not use it when:
 - a simple deterministic rule or planner is enough;
 - the project needs a proven global route planner;
 - the implementation would relabel maze cells or named states as columns;
-- the claim depends on biological cortex, AGI, or guaranteed benchmark success.
+- the claim depends on guaranteed benchmark success.
 
 ## Boundary
 
@@ -70,7 +70,7 @@ remain visible.
 
 ## Current Eval Support
 
-The [Cortical-Column World Model eval](../../../labs/evals/cortical-column-world-model/README.md)
+The [Local-Voting World Model eval](../../../labs/evals/local-voting-world-model/README.md)
 has a tiny-fixture `contract-pass`. It checks feature-location memory, lateral
 voting, rejected alternatives, and next-feature prediction only; it does not
-support biological, AGI, benchmark, or real-world performance claims.
+support benchmark or real-world performance claims.

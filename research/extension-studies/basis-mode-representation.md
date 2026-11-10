@@ -224,3 +224,10 @@ basis-mode tiny fixture passes.
 The result should remain bounded. A tiny eval can validate the declaration
 contract, but it does not prove physics accuracy, chemistry accuracy,
 production solver quality, or learned model performance.
+
+## References
+
+Public sources for mode decompositions on graphs.
+
+- [Spectral Graph Theory](https://doi.org/10.1090/cbms/092), Chung (1996). Eigenvalues and eigenvectors of the graph Laplacian.
+- [The Emerging Field of Signal Processing on Graphs](https://arxiv.org/abs/1211.0053), Shuman, Narang, Frossard, Ortega, and Vandergheynst (2012). The graph Fourier transform and operators that are diagonal in it.

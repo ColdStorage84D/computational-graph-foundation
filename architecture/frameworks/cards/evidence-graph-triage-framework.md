@@ -110,8 +110,11 @@ Treat an unresolved outcome as uncertainty rather than success, and make value k
 carry no case-specific detail, or they accumulate one sample each and never
 generalise.
 
-The current direct Labs result is a tiny-fixture `contract-pass`:
+The current direct Labs result is a value-over-baseline `contract-pass`:
 [../../../labs/evals/evidence-graph-triage/results.md](../../../labs/evals/evidence-graph-triage/results.md).
-Use it only as support for the local contract, not as a validated triage-quality
-claim. No application example currently ships for this card; the eval is the
+On synthetic findings, corroboration makes fewer than half the wrong commits of
+score ranking at equal volume, gives up recall, and loses most of its advantage
+when sources are correlated. Use it as support for the local contract and for
+the size of the effect under those assumptions, not as a validated
+triage-quality claim. No application example currently ships for this card; the eval is the
 only worked implementation.

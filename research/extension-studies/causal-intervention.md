@@ -90,9 +90,17 @@ remain useful for comparison.
 
 Status: research-supported; CGF-local eval `contract-pass`.
 
-The extension is ready as a card and study. Strong public claims require a
-reference pass and careful examples.
+The extension is ready as a card and study. The eval implements a structural
+causal model on one confounded fixture; stronger claims need examples where
+the graph is not handed to the model.
 
 ## CGF Eval Result
 
 See [../../labs/evals/causal-intervention/results.md](../../labs/evals/causal-intervention/results.md).
+
+## References
+
+Public sources for intervention and counterfactual semantics. The eval implements the structural causal model and backdoor adjustment described there.
+
+- [Causal inference in statistics: An overview](https://doi.org/10.1214/09-SS057), Pearl (2009). Structural causal models, the do-operator, and the adjustment formula.
+- [Causality](https://doi.org/10.1017/CBO9780511803161), Pearl, second edition (2009). The full treatment, including counterfactuals by abduction, action, and prediction.

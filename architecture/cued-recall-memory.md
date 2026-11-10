@@ -1,6 +1,6 @@
-# Engram / Spatial Memory
+# Cued Recall Memory
 
-Engram / Spatial Memory is the Architecture pattern for sparse, reactivatable
+Cued Recall Memory is the Architecture pattern for sparse, reactivatable
 episode traces that bind where, what, action, and outcome.
 
 ## Definition
@@ -18,7 +18,7 @@ spatial, visual, action, or outcome cues.
 ## Minimum Record
 
 ```text
-engram_id
+recall_trace_id
 episode_trace_refs
 where_refs
 what_refs
@@ -37,9 +37,15 @@ confidence
 
 ## Boundary
 
-An engram-like trace is recall support. It can provide proposal evidence, but it
+A recall trace is recall support. It can provide proposal evidence, but it
 cannot create value, truth, or policy by itself.
 
 ## Claim Boundary
 
 This is a docs-led Architecture guide. No direct Labs eval exists yet.
+
+## References
+
+The pattern is named for what it does. The idea of a sparse trace that a partial cue can reactivate comes from the study of memory engrams.
+
+- [Memory engrams: Recalling the past and imagining the future](https://doi.org/10.1126/science.aaw4325), Josselyn and Tonegawa (2020). A review of engram research: sparse traces, reactivation, and recall from partial cues.

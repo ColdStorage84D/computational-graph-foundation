@@ -32,10 +32,16 @@ public issue.
 ## Writing Style
 
 - Prefer clear definitions over broad claims.
-- State what a concept is not.
+- Say what a concept does before saying what it is not. Keep claim boundaries
+  in result records and claim-boundary pages, and link to them from elsewhere.
 - Mark maturity honestly.
 - Keep examples small enough to inspect.
 - Add code only when it is tied to a stable doc contract or a clear example.
+- Name a concept for what its code does. Keep a name from mathematics or
+  another field only when the code implements the object that name refers to,
+  and cite the source.
+- Declare an eval's layer in its result record. Claim that a concept helps only
+  from a value-over-baseline eval that also records where it does not.
 - Avoid creating a top-level SDK or package until the project has a clear reason.
 
 ## Release Readiness

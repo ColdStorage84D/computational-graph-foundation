@@ -91,3 +91,11 @@ future work.
 ## CGF Eval Result
 
 See [../../labs/evals/gauge-transport/results.md](../../labs/evals/gauge-transport/results.md).
+
+## References
+
+Public sources for local frames, transport, and holonomy on discrete structures.
+
+- [Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges](https://arxiv.org/abs/2104.13478), Bronstein, Bruna, Cohen, and Velickovic (2021). Gauges and frame choices as a design principle for computation on manifolds and graphs.
+- [Gauge Equivariant Convolutional Networks and the Icosahedral CNN](https://arxiv.org/abs/1902.04615), Cohen, Weiler, Kicanaoglu, and Welling (2019). Transporting features between local frames before combining them.
+- [Vector Diffusion Maps and the Connection Laplacian](https://arxiv.org/abs/1102.0075), Singer and Wu (2011). The connection Laplacian: comparing vectors across nodes through orthogonal transport maps.

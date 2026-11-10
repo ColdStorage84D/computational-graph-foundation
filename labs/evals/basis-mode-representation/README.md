@@ -14,5 +14,5 @@ operator support, readout, and truncation residuals.
 
 ## Boundary
 
-This eval does not claim physics accuracy, chemistry accuracy, production
-solver quality, benchmark performance, or learned model performance.
+The eval checks the declaration contract for a mode graph. The claim boundary
+is in [results.md](results.md).

@@ -71,3 +71,11 @@ the cell view.
 Status: research-supported; CGF-local eval `contract-pass`.
 
 See [../../labs/evals/cell-complex-view/results.md](../../labs/evals/cell-complex-view/results.md).
+
+## References
+
+Public sources for cells, boundaries, and operators on them.
+
+- [Hodge Laplacians on Graphs](https://doi.org/10.1137/18M1223101), Lim (2020). Boundary and coboundary operators on graphs and why the boundary of a boundary vanishes.
+- [Cell Complex Neural Networks](https://arxiv.org/abs/2010.00743), Hajij, Istvan, and Zamzmi (2020). Cell complexes as a computational domain above graphs.
+- [Weisfeiler and Lehman Go Cellular: CW Networks](https://arxiv.org/abs/2106.12575), Bodnar et al. (2021). Lifting graphs to cell complexes by attaching cells to cycles.

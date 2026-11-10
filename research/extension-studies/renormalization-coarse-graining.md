@@ -77,9 +77,18 @@ allowed to be discarded.
 
 Status: research-supported; CGF-local eval `contract-pass`.
 
-The extension is ready as a card and study. Future work should add examples
-that make the preserved law explicit.
+The extension is ready as a card and study. The eval makes one preserved law
+explicit: the linear response of a conductance network. Other laws need their
+own examples.
 
 ## CGF Eval Result
 
 See [../../labs/evals/renormalization-coarse-graining/results.md](../../labs/evals/renormalization-coarse-graining/results.md).
+
+## References
+
+Public sources for renormalization and for coarse-graining graphs. The eval implements Kron reduction, which is exact node elimination for conductance networks.
+
+- [Kron Reduction of Graphs With Applications to Electrical Networks](https://doi.org/10.1109/TCSI.2012.2215780), Dorfler and Bullo (2013). Kron reduction as a Schur complement of the graph Laplacian and what it preserves.
+- [The renormalization group: Critical phenomena and the Kondo problem](https://doi.org/10.1103/RevModPhys.47.773), Wilson (1975). The renormalization group: how couplings change when degrees of freedom are eliminated.
+- [Graph reduction with spectral and cut guarantees](https://arxiv.org/abs/1808.10650), Loukas (2018). Approximate graph coarsening with guarantees on what the coarse graph preserves.

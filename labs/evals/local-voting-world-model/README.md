@@ -1,9 +1,11 @@
-# Cortical-Column World Model Eval
+# Local-Voting World Model Eval
 
 Status: `contract-pass`
 
-This eval recreates a narrow graph mechanism inspired by the cortical-column /
-Thousand Brains concept:
+This eval runs a narrow graph mechanism: local columns bind features to
+locations, vote laterally, and predict the next feature. The mechanism is
+adapted from the Thousand Brains proposal; the references are in the
+[Architecture guide](../../../architecture/local-voting-world-model.md#references).
 
 ```text
 movement + feature -> feature-at-location memory
@@ -12,19 +14,18 @@ many columns -> lateral voting -> selected object hypothesis
 selected object + action -> predicted next feature
 ```
 
-The fixture is synthetic. It is not a biological simulation, not an AGI system,
-and not evidence that CGF has solved world models. It only checks whether a
-small graph can represent the concept cleanly enough to run and inspect.
+The fixture is synthetic. It only checks whether a small graph can represent
+the mechanism cleanly enough to run and inspect.
 
 ## CGF Mapping
 
-| Concept term | Toy graph role |
+| Term in the source proposal | Toy graph role |
 | --- | --- |
 | Layer 4 | Current feature input. |
 | Layer 5 | Movement/action delta. |
 | Layer 6 | Path-integrated local reference-frame position. |
 | Layers 2/3 | Object hypotheses and lateral voting state. |
-| Cortical column | Local subgraph capsule with feature-location memory. |
+| Column | Local subgraph capsule with feature-location memory. |
 | Voting | Architecture readout over column hypotheses. |
 | Prediction | One-step readout from selected object model and action. |
 
@@ -49,5 +50,5 @@ The eval passes when:
 ## Run
 
 ```powershell
-python -m unittest discover -s labs/evals/cortical-column-world-model -p "test_*.py"
+python -m unittest discover -s labs/evals/local-voting-world-model -p "test_*.py"
 ```

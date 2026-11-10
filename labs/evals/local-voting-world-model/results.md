@@ -1,6 +1,8 @@
-# Cortical-Column World Model Eval Results
+# Local-Voting World Model Eval Results
 
 Status: `contract-pass`
+
+Eval layer: `isolated`
 
 Reviewed date: 2026-06-10
 
@@ -20,5 +22,5 @@ This is a tiny synthetic fixture. It supports only the claim that CGF can
 represent and run a toy feature-location / voting / prediction mechanism as a
 graph-shaped computation.
 
-It does not support a biological claim, a general world-model claim, an AGI
-claim, or a real-world performance claim.
+It does not support a general world-model claim or a real-world performance
+claim.
